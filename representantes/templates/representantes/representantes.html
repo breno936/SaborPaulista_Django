@@ -1,0 +1,472 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'representantes/style.css' %}"/>
+<link rel="stylesheet" href="{% static 'products/util.css' %}"/>
+
+{% endblock head %}
+
+
+{% block content %}
+
+
+    <div class="size-a-1 flex-col-c-m p-b-20" style="padding-top: 100px; padding-bottom:80px;">
+        <div class="txt-center txt-m-201 cl10 how-pos1-parent m-b-14">
+            Sabor Paulista
+            <div class="how-pos1">
+                <img src="{% static 'img/symbol-02.png'%}" alt="IMG">
+            </div>
+        </div>
+        <h3 class="txt-center txt-l-101 cl3 respon1" style="text-transform:none;">
+            Torne-se um Representante!
+        </h3>
+    </div>
+    <section class="col-12" style="padding:50px 0px;">
+        <div class="section col-12 d-md-flex container">
+            <div class="col-md-6 col-12">
+                <p style="font-size: 18px; color: rgb(47 52 69); line-height:30px;">
+                    Descubra o poder de ser um representante <b>Sabor Paulista</b> e transforme sua vida! Com uma oportunidade de negócio incrível e um produto que desperta paixão, você terá a chance de construir seu próprio império gastronômico.
+                </p>
+                <p style="font-size: 18px; color: rgb(47 52 69); line-height: 30px;">
+                    Seja um empreendedor de sucesso, encantando paladares e criando memórias deliciosas. Abra as portas para o sabor e para um futuro brilhante. Junte-se a nós e faça parte da família que leva alegria através de cada mordida.
+                </p>
+                <p style="font-size: 18px; color: rgb(47 52 69); line-height: 30px;">
+                    Vamos construir uma história saborosa juntos!
+                </p>
+                {% comment %} @*<p>
+                Com produtos irresistíveis e uma oportunidade de negócio única, você pode encantar paladares e alcançar o sucesso. Junte-se a nós e leve essa delícia para todos os cantos, conquistando sorrisos e bons negócios!
+            </p>*@ {% endcomment %}
+                <div>
+                    <img style="width:100%; margin-top:70px; height:100%;" src="{% static 'img/representante_foto_01.jpg'%}" />
+                </div>
+            </div>
+            <div class="col-md-6 col-12 mt-40 mt-md-0">
+                <div class="col-12" style="height: fit-content; padding:26px; padding-top:0; text-align:left; ">
+                    <p style="font-size: 18px; margin: 0; color: rgb(47 52 69); line-height: 30px;">Fale com a nossa central:
+                        <b>(19) 3909-1511 • (19) 97409-9730</b> Whatsapp
+                    ou
+                   preencha o formulário que entraremos em contato</p>
+                </div>
+                <div class="" style="">
+                    <form onsubmit="EnviarForm()" class="rounded p-2 ml-lg-4 p-md-4" style="">
+                        <div class="col-md-12 mb-4 " style="padding:0;">
+                            <div class="form-floating col-12" style="padding:0;">
+
+                                <input type="text" style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px;" class="form-control col-12" id="nomeInput" placeholder="Nome" />
+
+                                {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-4 " style="padding:0;">
+                            <div class="form-floating col-12" style="padding:0;">
+                                <input type="email" style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px;" class="form-control col-12" id="emailInput" placeholder="Email" />
+
+
+                                {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-4 " style="padding:0;">
+                            <div class="form-floating col-12" style="padding:0;">
+
+                                <input type="telefone" style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px;" class="form-control col-12" id="telefoneInput" placeholder="Telefone" />
+
+                                {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-4 " style="padding:0;">
+                            <div class="form-floating col-12" style="padding:0;">
+
+                                <input type="cidade" style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px;" class="form-control col-12" id="cidadeInput" placeholder="Cidade que deseja atuar" />
+
+                                {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="col-md-12 " style="padding:0; margin-bottom:30px;">
+                            <div class="form-floating col-12" style="padding:0;">
+
+
+                                <textarea class="form-control col-12 " style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px;" id="mensagemInput" placeholder="Mensagem" rows="3"></textarea>
+
+                                {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+                            </div>
+                        </div>
+
+
+                        <div class="col-12" style="display:flex; align-items:center; margin:0; justify-content:space-between; padding:0;">
+                            <div class="g-recaptcha" style="width:fit-content; margin-top:10px;" data-sitekey="6Lcj44knAAAAAJaoFWd0_CzY5wnuHsnKNE5XYCWt"></div>
+
+                            <div>
+                                <span class="ltx-btn-wrap">
+                                    <span class="ltx-btn-wrap">
+                                        <input class="btn btn-primary btn-send" style="margin-left:0;" type="submit" value="Enviar">
+                                    </span>
+                                </span><span class="ajax-loader"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding:100px 0px; height:auto; background-color:#F7F7F7;">
+        <div class="container flex-md-row flex-column" style="display:flex;">
+            <div class="order-0 col-md-6" style="height:400px; flex-grow:-1;">
+                <div class="plyr__video-embed" style="width:100%; height:100%;" id="player-container" data-plyr-provider="youtube" data-plyr-embed-id="-OKJxbei7Xk"></div>
+            </div>
+            <div class="order-1 col-md-6 col-12" style="padding-left:30px; margin-left:15px;">
+                <h1 style="font-size: 60px; color:black;">Título</h1>
+                <h1 style="font-size: 18px; margin-bottom: 25px; color: rgb(47 52 69);">Sub Título</h1>
+                <h3 style="font-size: 18px; color: rgb(47 52 69); line-height:30px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishin</h3>
+            </div>
+        </div>
+    </section>
+    <section class="vantagens" style="">
+        <div class="imagemBack"></div>
+        <div class="container" style="height:auto; padding:60px 0; padding-bottom:80px;">
+            <div class="tituloIntroVantagens" style="width: 80%; padding-top: 100px; color: white; padding-left: 30px;">
+                <h4 style="font-size: 14px; margin-bottom: 30px; font-weight: 900; color: white; letter-spacing:2px;">DESTAQUE-SE</h4>
+                <h1 style="font-size: 60px; color: white; font-family: 'Open Sans Extrabold', arial !important; font-weight: 900; ">Vantagens e benefícios <br />ao representar os produtos da Sabor Paulista</h1>
+                <h4 style="color: white; font-size:18px; margin-top:70px; line-height:30px;">Entre em contato conosco agora mesmo e descubra as condições especiais que temos reservadas
+                 para a implantação ou aprimoramento do seu negócio!</h4>
+            </div>
+
+            <div style="display:flex;">
+                <div class="col-6 divVantagens" style="height: 100%; padding-left: 0; margin-top: 50px; padding-left: 30px;">
+                    <h1 style="color: white;">Vantagens ao Representar.</h1><br />
+                    <p>
+                        <b>Produto Premium</b><br /> Representar a Sabor Paulista
+                        significa oferecer produtos de qualidade tipo exportação,
+                        que elevam o padrão do portifólio do representante.
+                    </p>
+                    <br />
+                    <p>
+                        <b>Reconhecimento da Marca</b><br /> A Sabor Paulista é uma marca reconhecida
+                        nacional e internacionalmente, o que agrega valor á carteira de
+                        clientes do representante.
+                    </p>
+                    <br />
+
+                    <p>
+                        <b>Diversidade de Opções</b><br /> O portifólio da Sabor Paulista inclui diversas
+                        opções de sabores e produtos, atendendo a diferentes gostos e necessidades dos
+                        clientes.
+                    </p>
+                    <br />
+
+                    <p>
+                        <b>Suporte e Treinamento</b><br /> O representante recebe suporte e treinamento contínuos
+                        da equipe da Sabor Paulista, para aprimorar suas habilidades de vendas e atendimento.
+                    </p>
+                    <br />
+
+                    <p>
+                        <b>Exclusividade de Mercado</b><br /> O representante pode ter a exclusividade para atuar em
+                        determinadas regiões, aumentando suas oportunidades de negócio.
+                    </p>
+                    <br />
+
+                    <p>
+                        <b>Margens Competitivas</b><br /> A Sabor Paulista oferece margens competitivas, garantindo
+                        uma relação de parceria vantajosa para o representante.
+                    </p>
+                    <br />
+                    <p>
+                        <b>Material de Marketing</b><br /> O representante tem acesso a materiais de marketing e amostras
+                        dos produtos, facilitando suas ações de divulgação e vendas.
+                    </p>
+                    <br />
+
+                    <p>
+                        <b>Satisfação dos Clientes</b><br /> Os produtos da Sabor Paulista são reconhecidos pelo sabor
+                        autêntico, o que resulta em clientes satisfeitos e fidelizados.
+                    </p>
+                    <br />
+
+                    <p>
+                        <b>Tradição e Credibilidade</b><br /> Representar uma empresa com tradição e credibilidade no mercado
+                        fortalece a reputação do representante junto aos clientes.
+                    </p>
+                    <br />
+
+                    <p>
+                        <b>Oportunidades de Crescimento</b><br /> O sucesso na representação dos produtos da Sabor Paulista
+                        pode abrir portas para novas oportunidades de negócio e expansão da atuação do representante.
+                    </p>
+                </div>
+                <div class="col-6 divVantagens" style="height: 100%; color: white; margin-top: 50px; padding-left:45px;">
+                    <h1 style="color: white;">Benefícios para Seus Clientes</h1><br />
+                    <p>
+                        <b>Sabor Inigualável</b><br /> Seus clientes desfrutarão de um sabor autêntico e irresistível, proporcionando uma experiência gastronômica única.
+                    </p>
+                    <br />
+
+                    <p><b>Qualidade Premium</b><br /> Os produtos da Sabor Paulista são feitos com ingredientes selecionados e técnicas tradicionais, garantindo qualidade tipo exportação.</p>
+                    <br />
+
+                    <p>
+
+                        <b>Variedade de Opções</b><br /> Seus clientes terão acesso a uma diversidade de sabores e produtos para satisfazer diferentes preferências e ocasiões.
+                    </p>
+                    <br />
+
+                    <p>
+                        <b>Segurança Alimentar</b><br /> A Sabor Paulista preza pela segurança alimentar, assegurando que seus produtos sejam produzidos com os mais altos padrões de higiene e qualidade.
+
+                    </p>
+                    <br />
+
+                    <p>
+                        <b>Produtos Versáteis</b><br /> Os produtos da Sabor Paulista são versáteis e podem ser apreciados em diversas ocasiões, desde lanches rápidos até eventos especiais.
+
+                    </p>
+                    <br />
+
+                    <p>
+                        <b>Origem Brasileira</b><br /> Seus clientes sentirão o orgulho de consumir produtos genuinamente brasileiros, levando um pedacinho do Brasil para suas vidas.
+
+                    </p>
+                    <br />
+
+                    <p>
+                        <b>Satisfação Garantida</b><br /> A excelência dos produtos da Sabor Paulista resultará em clientes satisfeitos, que se tornarão fiéis à marca.
+
+                    </p>
+                    <br />
+
+
+                    <p>
+                        <b>Experiência Compartilhada</b><br /> Ao oferecer os produtos da Sabor Paulista, seus clientes terão a oportunidade de compartilhar momentos especiais e deliciosos com seus familiares e amigos.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section style="padding-top:100px;">
+        <div class="container">
+            <div class="text-center">
+                <h1 style="color: black; font-size:42px;">
+                    Um Grande Resultado Para Seu Negócio
+                </h1>
+                <h4 style="padding-top: 10px; color: rgb(47 52 69); font-size: 18px;">Nossa Linha de Produtos</h4>
+            </div>
+            <div class="tab-pane @*fade*@ show active whight-product" id="nav-popular" role="tabpanel" aria-labelledby="nav-popular-tab" style="padding-top:50px; padding-bottom:50px;">
+                <div class="tpproduct__shop-item" id="isotope_container" style="display:flex;">
+                    @foreach (var produto in Model.ProductHomes)
+                    {
+
+                        <div class="isotope_selector categoria_@produto.CategoriaId" style="width:15%;">
+                            <a href='@Url.Action("SingleProduct", "Produtos", new {id = produto.Id})'>
+                                <div class="tpproduct p-relative mb-20 boxShadowHover">
+                                    <div class="mx-auto tpproduct__thumb p-relative text-center" style="height:50%;">
+                                        <img id="imgProduto{@produto.Id}" class="tpproduct__thumb-img1" src="~/Content/UploadImages/@produto.Imagem1" alt="">
+                                        <img class="tpproduct__thumb-img2" src="~/Content/UploadImages/@produto.Imagem2" alt="">
+                                        <div class="tpproduct__info bage">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="tpproduct__content">
+                                        <span class="tpproduct__content-weight">
+                                            <span class="produto-categoria" id="nomeCategoriaProduto{@produto.Id}">@produto.NomeCategoria</span>
+                                        </span>
+                                        <h4 class="tpproduct__title">
+                                            <span class="produto-nome" id="nomeProduto{@produto.Id}">@produto.Nome</span>
+                                        </h4>
+                                        {% comment %} @{ int id = produto.Id;
+                                            decimal preco = produto.Preco;
+                                            string img = produto.Imagem1;
+                                            string nome = produto.Nome;
+                                            int quantidade = 1;
+                                        } {% endcomment %}
+
+                                        <div class="tpproduct__rating mb-5">
+
+                                        </div>
+                                        {% comment %} @*<div class="tpproduct__price">
+                                <span id="precoProduto{@produto.Id}">@produto.Preco</span>
+                            </div>*@ {% endcomment %}
+
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section col-12" style="margin-bottom:150px;">
+   
+        <section class="" style="background-color:#F7F7F7; background-position: center center; margin-bottom:40px; padding-bottom:60px;">
+            <div class="container px-8 md:px-24 mx-auto" style="padding-top:100px;">
+
+                <h3 class="txt-center txt-l-101 cl3 respon1" style="text-transform:none; margin-bottom:30px;">
+                    Confira nossos Representantes!
+                </h3>
+                <div style="display:flex; align-items:center; flex-wrap:wrap; text-align:left; width:100%; margin-bottom:12px;">
+                    <div class="search col-8 col-md-4 mx-auto" style="display:flex;">
+                        <input style="border: 1px solid rgba(255, 182, 13, 0.75); border-right:none; border-radius: 5px; padding: 8px; background-color: #F7F7F7 !important;" type="text" class="searchTerm col-12" placeholder="Buscar... Nome, Cidade, Estado, Telefone" id="myInput" onkeyup="filtro(this.value)" />
+                        <button style="background-color: rgba(255, 182, 13, 0.75); z-index: 90; position: relative; padding: 9px; margin-left: -8px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; " type="submit" class="searchButton">
+                            <i class="fa fa-search" style="color:white;" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div id="documentosContainer" style="padding-top:50px;">
+                    <div class="d-flex flex-wrap -mx-4">
+
+                        {% for r in representantes %}
+
+                            <div class="col-12 col-md-6 col-lg-4 ">
+
+                                <a href="https://www.google.com/maps/place/@representante.EnderecoMaps" target="_blank">
+                                    <div class="col-12 px-4 manu" data-eva="@representante.Nome">
+                                        <div id="documentoContainer" class="h-full p-4 text-center rounded-md hover:shadow-xl transition duration-200">
+                                            <div class="inline-flex h-16 mb-6 items-center justify-center text-white bg-vermelho rounded-lg" style="background-color: rgba(255, 182, 13, 0.75) !important; height: 60px; margin: auto auto; box-sizing: border-box; padding: 15px; width: 60px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="white" d="M547.6 103.8L490.3 13.1C485.2 5 476.1 0 466.4 0H109.6C99.9 0 90.8 5 85.7 13.1L28.3 103.8c-29.6 46.8-3.4 111.9 51.9 119.4c4 .5 8.1 .8 12.1 .8c26.1 0 49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29c26.1 0 49.3-11.4 65.2-29c15.9 17.6 39.1 29 65.2 29c26.2 0 49.3-11.4 65.2-29c16 17.6 39.1 29 65.2 29c4.1 0 8.1-.3 12.1-.8c55.5-7.4 81.8-72.5 52.1-119.4zM499.7 254.9l-.1 0c-5.3 .7-10.7 1.1-16.2 1.1c-12.4 0-24.3-1.9-35.4-5.3V384H128V250.6c-11.2 3.5-23.2 5.4-35.6 5.4c-5.5 0-11-.4-16.3-1.1l-.1 0c-4.1-.6-8.1-1.3-12-2.3V384v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V384 252.6c-4 1-8 1.8-12.3 2.3z" /></svg>
+
+                                            </div>
+                                            <h3 class="mb-4 mt-4" style="font-weight:bold; font-size:25px; color:black;">{{r.nome}}</h3>
+                                            <br />
+                                            {% if r.tel %} 
+                                             <p>{{ r.tel }}</p>   
+                                            {% endif %}
+
+                                            {% if r.cel %} 
+                                             <p>{{ r.cel }}</p>   
+                                            {% endif %}
+
+                                            <br />
+
+                                            <p>{{r.email}}</p>
+                                            <br />
+
+                                            <p> {{r.endereco}} • {{r.cep}} • {{ r.cidade}} / {{r.estado}}</p>
+
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+
+                        {% endfor %}
+                    </div>
+
+                </div>
+                <div class="hidden w-full h-80" id="semResult"><h1>Não foram encontrados resultados para: </h1></div>
+            </div>
+        </section>
+    </section>
+
+    {% comment %} @*<section class="linhaProdutos">
+            <div class="container">
+                <h1>Nossa linha de Produtos</h1>
+
+            </div>
+        </section>*@ {% endcomment %}
+
+
+<a href="#topo" class="scroll-top" data-target="html" style="position: fixed !important; background-color: #ffb60dbf !important; opacity: 1 !important; position: fixed; right: 50px; bottom: 70px; z-index: 90 !important;">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="white" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" /></svg>
+</a>
+
+<!-- Modal HTML Markup -->
+<!--<div id="ModalLoginForm" class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Login</h1>
+            </div>
+            <div class="modal-body">
+                <form role="form" method="POST" action="">
+                    <input type="hidden" name="_token" value="">
+                    <div class="form-group">
+                        <label class="control-label">E-Mail Address</label>
+                        <div>
+                            <input type="email" class="form-control input-lg" name="email" value="@ViewBag.Nome">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Password</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="password" value="@ViewBag.Preco">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="remember"> Remember Me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button type="submit" class="btn btn-success">Login</button>
+
+                            <a class="btn btn-link" href="">Forgot Your Password?</a>
+                        </div>
+                    </div>
+                </form>
+                <h1>Or Signup!</h1>
+                <form role="form" method="POST" action="">
+                    <input type="hidden" name="_token" value="">
+                    <div class="form-group">
+                        <label class="control-label">Username</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="name" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">E-Mail Address</label>
+                        <div>
+                            <input type="email" class="form-control input-lg" name="email" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Password</label>
+                        <div>
+                            <input type="password" class="form-control input-lg" name="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Confirm Password</label>
+                        <div>
+                            <input type="password" class="form-control input-lg" name="password_confirmation">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button type="submit" class="btn btn-success">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>-->
+<!-- /.modal-content -->
+<!--</div>--><!-- /.modal-dialog -->
+<!--</div>--><!-- /.modal -->
+
+
+
+
+{% endblock content %}
+
+
+
+{% block scripts %}
+
+<script src="{% static 'representantes/style.js' %}"></script>
+
+{% endblock scripts %}

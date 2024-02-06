@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'foodService/style.css' %}"/>
+<link rel="stylesheet" href="{% static 'products/util.css' %}"/>
+
+{% endblock head %}
+
+{% block content %}
+
+<section class="sec-delivery bg-img1 p-t-100 p-b-100" style="background-color:#F7F7F7;">
+    <div class="container">
+        <div class="size-a-1 flex-col-c-m p-b-60">
+            <div class="txt-center txt-m-201 cl10 how-pos1-parent m-b-14">
+                Sabor Paulista
+                <div class="how-pos1" style="width:90px;">
+                    <img src="{% static 'img/symbol-02.png'%}" alt="IMG">
+                </div>
+            </div>
+            <h3 class="txt-center txt-l-101 cl3 respon1" style="text-transform:none;">
+                Agilidade e Rentabilidade. Sabor de sorrisos!
+            </h3>
+        </div>
+        <!-- -->
+        <div class="txt-center pos-relative">
+            <img class="max-w-full" src="{% static 'img/other-12.png'%}" alt="IMG">
+        </div>
+    </div>
+</section>
+
+
+<div class="bloc bloco_quality l-bloc" id="bloc-4" style="margin-top:0; margin-bottom:0; background-color:#F7F7F7;">
+    <div class="container bloc-lg" style="padding:0px 0px;">
+        <div style="">
+            <div class="col-12 mx-auto text-left" style="padding:50px; padding-top:25px; display:flex;">
+                <div class="col-6">
+                    <img src="{% static 'img/exportacao.jpg'%}" id="" data-src="img/logomarca.png" class="img-fluid d-block ls-is-cached lazyloaded imgExportacao" style=" transition: transform 2s ease; width:100%; height:auto;" alt="logomarca">
+                </div>
+                <div>
+
+                </div>
+                <div class="" style="padding-left:30px; padding-right:30px;">
+                    <h1 class="mg-md h1-3-style tc-black" style="z-index:210; position:relative; font-weight:300;">
+                        Qualidade Tipo Exportação
+                    </h1>
+                    <h4 style="font-size: 18px; color: rgb(47 52 69); line-height:30px;">
+                        Encante seus clientes com os produtos Sabor Paulista, qualidade tipo exportação. Delicie-os
+                        com o sabor autêntico e irresistível das nossas iguarias brasileira, feita com ingredientes
+                        selecionados e técnicas tradicionais.<br /><br />
+
+                        Seja em reuniões, eventos ou momentos de confratenização, seus clientes irão se surpreender.
+                        Eleve suas relações comerciais com essa opção diferenciada, que agrega valor e destaca sua
+                        empresa no mercado internacional. Peça agora mesmo e leve o verdadeiro sabor do Brasil para seus clientes!
+                    </h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<section style="padding-top: 60px; padding-bottom: 100px; background-color: #F7F7F7; ">
+    <div class="container" style="display:flex;">
+        <div class="col-6">
+            <p>Matéria Prima e Fornecedores</p>
+            <ul>
+
+                <li style="list-style-type:disc;"><p>Implementação de critérios rigorosos para seleção e homologação de fornecedores;</p></li>
+                <li style="list-style-type:disc;"><p>Realização de avaliações, visitas técnicas e auditorias antes da contratação;</p></li>
+                <li style="list-style-type:disc;"><p>Execução de testes de efetividade nas massas de produtos;</p></li>
+                <li style="list-style-type:disc;"><p>Registro diário da qualidade na entrega e no armazenamento, mantidos em planilhas;</p></li>
+                <li style="list-style-type:disc;"><p>Laudos de qualidade sempre atualizados.</p></li>
+
+            </ul><br/><br />
+            <p>
+                Controle de Qualidade
+            </p>
+            <p>
+                São realizados diariamente:
+            </p>
+            <ul>
+                <li style="list-style-type:disc;"><p>Lista de verificação para uniformização, higiene e uso de EPIs pelos funcionários;</p></li>
+                <li style="list-style-type:disc;"><p>Monitoramento das temperaturas dos equipamentos;</p></li>
+                <li style="list-style-type:disc;">
+                    <p>
+                        Registros de produção acompanhados por profissional nutricionista especialista em Controle de Qualidade de Alimentos, assim como sua equipe composta
+                        por engenheiro de alimentos e técnico em nutrição e dietética, todos com ampla experiência no setor de panificação.
+                    </p>
+                </li>
+
+            </ul>
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <div role="form" class="wpcf7 container" id="wpcf7-f10794-p25-o2" lang="en-US" dir="ltr">
+                <div class="screen-reader-response"></div>
+                <div class="col-12 mx-auto">
+                    <h1 style="color: rgb(77, 85, 116); font-size:40px; margin-bottom:10px; font-weight:300;">Quero vender produtos Sabor Paulista!</h1>
+                    {% comment %} @using (Html.BeginForm("SendEmail", "Contato", FormMethod.Post, new { @class = "wpcf7-form p-0", role = "form", onsubmit = "Validate()" }))
+                    { {% endcomment %}
+                        {% comment %} @Html.AntiForgeryToken() {% endcomment %}
+                        <div style="display: none;">
+                            <input type="hidden" name="_wpcf7" value="10794" />
+                            <input type="hidden" name="_wpcf7_version" value="5.1.6" />
+                            <input type="hidden" name="_wpcf7_locale" value="en_US" />
+                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f10794-p25-o2" />
+                            <input type="hidden" name="_wpcf7_container_post" value="25" />
+                        </div>
+
+                        {% comment %} @Html.ValidationSummary("", new { @class = "text-danger" }) {% endcomment %}
+
+                        <!-- Floating Labels Form -->
+                        {% comment %} @*<form class="row g-3">*@ {% endcomment %}
+                        <div class="col-md-12 mb-4 " style="padding:0;">
+                            <div class="form-floating col-12" style="padding:0;">
+                                <input type="text" class="fieldsFood form-control"></input>
+                                {% comment %} @Html.TextBoxFor(m => m.Nome, new { @class = "form-control", @id = "nomeCurriculo", @placeholder = "Nome", style = "" }) {% endcomment %}
+                                {% comment %} @Html.ValidationMessageFor(m => m.Nome) {% endcomment %}
+                                {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="col-12 p-0" style="display:flex;">
+
+                            <div class="col-6 mb-4 " style="padding:0; padding-right:10px;">
+                                <div class="form-floating col-12" style="padding:0;">
+                                    <input type="text" class="fieldsFood form-control"></input>
+
+                                    {% comment %} @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @id = "emailCurriculo", @placeholder = "Email", style = "border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px; background-color:#F7F7F7;" })
+                                    @Html.ValidationMessageFor(m => m.Email) {% endcomment %}
+
+                                    {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+
+                                </div>
+                            </div>
+                            <div class="col-6 mb-4 " style="padding:0;">
+                                <div class="form-floating col-12" style="padding:0;">
+                                    <input type="text" class="fieldsFood form-control"></input>
+
+                                    {% comment %} @Html.TextBoxFor(m => m.Telefone, new { @class = "form-control", @id = "telefoneCurriculo", @placeholder = "Telefone", style = "border-radius:5px; padding:23px; box-sizing:border-box; font-size:15px; background-color:#F7F7F7;" })
+                                    @Html.ValidationMessageFor(m => m.Telefone) {% endcomment %}
+
+                                    {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-md-12 mb-4 " style="padding:0;">
+                                <div class="form-floating col-12" style="padding:0;">
+                                    <textarea class="form-control foodArea"></textarea>
+                                    {% comment %} @Html.TextAreaFor(m => m.Mensagem, new { @class = "form-control", @id = "mensagemCurriculo", @placeholder = "Mensagem", style = "" }) {% endcomment %}
+
+                                    {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 clientesRadios" style="margin-bottom:20px; display:flex; padding:0; justify-content:flex-start;">
+                                <label style="display:flex; align-items:center; padding:0;">
+                                    <input type="radio" class="m-0 mr-2 square-radio" name="radioSquare"/>
+                                    {% comment %} @Html.RadioButtonFor(m => m.Tipo, "Consumidor", new { @class = "m-0 mr-2 square-radio", @placeholder = "Email" }) {% endcomment %}
+                                    <span class="square-radio-label mr-2"></span>
+                                    Consumidor
+                                </label>
+                                <label class="" style="display: flex; align-items: center; padding: 0;margin-left:30px;">
+                                    <input type="radio" class="m-0 mr-2 square-radio" name="radioSquare"/>
+
+                                    {% comment %} @Html.RadioButtonFor(m => m.Tipo, "Empresa", new { @class = "m-0 mx-2 square-radio", @placeholder = "Email" }) {% endcomment %}
+                                    <span class="square-radio-label mx-2"></span>
+                                    Empresa
+                                </label>
+                                <label class="" style="display: flex; align-items: center; padding: 0; margin-left: 30px;">
+                                    <input type="radio" class="m-0 mr-2 square-radio" name="radioSquare"/>
+
+                                    {% comment %} @Html.RadioButtonFor(m => m.Tipo, "Fornecedor", new { @class = "m-0 mx-2 square-radio", @placeholder = "Email" }) {% endcomment %}
+                                    <span class="square-radio-label mx-2"></span>
+                                    Fornecedor
+                                </label>
+                            </div>
+                            <!-- CAPTCHA do reCAPTCHA -->
+                            <div class="col-12  flex-sm-row flex-column" style="display:flex; align-items:center; margin:0; justify-content:space-between; padding:0;">
+                                <div class="g-recaptcha" style="width:fit-content; margin-top:10px;" data-sitekey="6Lcj44knAAAAAJaoFWd0_CzY5wnuHsnKNE5XYCWt"></div>
+
+                                <div>
+                                    <span class="ltx-btn-wrap">
+                                        <span class="ltx-btn-wrap">
+                                            <button style="background-color: transparent; letter-spacing: 3px; transition: all 0.1s linear !important; padding: 10px 0px; border: 1px solid #ced4da; border-radius: 50px; height: 50px; font-size: 14px; color: black; font-weight: 400;" type="submit" value="Enviar" class="wpcf7-form-control wpcf7-submit btn botaoEnviar">Enviar</button>
+                                        </span>
+                                    </span><span class="ajax-loader"></span>
+                                </div>
+                            </div>
+
+                            <!--</form>--><!-- End floating Labels Form -->
+                            {% comment %} } {% endcomment %}
+
+                        </div>
+                    </div>
+        </div>
+    </div>
+</section>
+
+<section>
+
+</section>
+<a href="#topo" class="scroll-top" data-target="html" style="position: fixed !important; background-color: #ffb60dbf !important; opacity: 1 !important; position: fixed; right: 50px; bottom: 70px; z-index: 90 !important;">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="white" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" /></svg>
+</a>
+
+{% endblock content %}
+
+

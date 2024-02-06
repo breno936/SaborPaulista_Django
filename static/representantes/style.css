@@ -1,0 +1,263 @@
+    .tit-representante {
+        font-size: 28px;
+        font-weight: 600;
+        margin: 10px 0 30px 0;
+        color: #333;
+        letter-spacing: -1px;
+    }
+
+        .tit-representante b {
+            display: block;
+            font-size: 44px;
+        }
+
+    .btn-enviar {
+        background: #f1ca3a;
+        color: #fff;
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 10px;
+        width: 110px;
+    }
+
+        .btn-enviar:hover {
+            background: #333;
+            color: #fff;
+        }
+
+    .formulario {
+    }
+
+        .formulario input, .formulario textarea {
+            font-size: 14px;
+        }
+
+    .select2-container--bellow {
+        display: none;
+    }
+    .tpproduct:hover .tpproduct__thumb-img2 {
+    }
+
+    .tpproduct__thumb-img2 {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        width: 78% !important;
+    }
+
+    .tpproduct__thumb-img1 {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        width: 78% !important;
+    }
+
+    .boxShadowHover:hover {
+        box-shadow: 0px 0px 10px #ffb60d82;
+    }
+
+    .tituloIntroVantagens h1::after {
+        content: '';
+        width: 100px;
+        height: 2px;
+        background-color: white;
+        display: block;
+        margin-top: 30px;
+    }
+
+    .boxShadowHover {
+    }
+
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #ffb60dbf;
+    }
+
+    .boxShadowHover:hover .tpproduct__thumb-img2 {
+        opacity: 0;
+    }
+
+    .tpproduct__thumb {
+        width: 90%;
+    }
+
+    boxShadowHover:hover .tpproduct__thumb-img1 {
+        opacity: 1;
+    }
+
+    .isotope_selector {
+        cursor: pointer;
+        height: 350px;
+    }
+
+    .whight-product .tpproduct__content {
+        padding-bottom: 0;
+    }
+
+    .whight-product .tpproduct {
+        border: 1px solid #00000014;
+        border-radius: 3px;
+        height: 100%;
+    }
+
+
+
+    .page_title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 600;
+        margin: 10px 0 30px 0;
+        color: #333;
+    }
+
+    .button {
+        transition: all .2s ease-in-out;
+        -webkit-appearance: none;
+        border-radius: 100px;
+        font-family: inherit;
+        appearance: none;
+        background: none;
+        font-weight: 300;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 10px 20px;
+        outline: none;
+        opacity: 1;
+        border: 1px solid transparent;
+        color: rgb(47 52 69);
+        margin-left: 10px;
+        width: auto;
+        margin-top: 20px;
+    }
+
+        .button:hover,
+        .button.active {
+            opacity: 1;
+            color: #FFB60D;
+            border: 1px solid #FFB60D;
+            border-radius: 50px;
+        }
+
+    .active {
+        color: #d86c6f;
+    }
+
+    .produto-categoria {
+        color: #FFB60D;
+        font-weight: bold;
+        font-family: 'Open Sans', arial;
+        font-size: 12px;
+    }
+
+    .produto-nome {
+        font-family: "Opens Sans", sans-serif;
+        font-weight: 500;
+        color: #333;
+        font-size: 14px;
+        color: rgb(47 52 69) !important;
+    }
+
+    .produto-preco {
+        font-weight: 600;
+        color: #068007;
+        font-size: 18-x;
+    }
+
+        .produto-preco i {
+            font-style: inherit;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+
+    .produtoItem {
+        /*transition: all ease-in-out .4s;*/
+        transition: opacity 200ms, display 200ms;
+    }
+
+
+
+
+
+
+
+    .divVantagens p {
+        color: white;
+    }
+
+    .divVantagens b {
+        font-size: 18px;
+        color: rgb(255, 182, 13);
+    }
+
+    .vantagens {
+        position: relative;
+    }
+
+        .vantagens .imagemBack {
+            background-image: url('../img/newbgback.jpeg');
+            background-repeat: no-repeat;
+            background-position: top top;
+            background-attachment: fixed;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+
+    #documentoContainer {
+        transition: all 0.1s linear;
+    }
+
+        #documentoContainer:hover {
+            box-shadow: 0px 0px 15px #0000002b;
+        }
+
+    .isotope_selector:hover .boxShadowHover {
+        box-shadow: 0px 0px 10px #ffb60d2b;
+    }
+
+    textarea::placeholder {
+        font-size: 13px; /* Defina o tamanho desejado */
+    }
+
+    .isotope_selector {
+        cursor: pointer;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        max-height: 300px;
+    }
+
+    .btn-send {
+        margin: 0 auto;
+        height: 40px;
+        background-color: transparent !important;
+        border-radius: 50px;
+        padding: 10px 30px;
+        color: black;
+        font-size: 14px;
+        font-weight: 400;
+        border: 1px solid black;
+        display: block;
+    }
+
+        .btn-send:hover {
+            background-color: #FFB60D !important;
+            border-color: transparent;
+        }
+
+    .searchButton:hover {
+        background-color: rgb(255 204 85 / 75%) !important;
+    }
+
+@media(max-width:768px){
+    .isotope_selector {
+        width: 45% !important;
+    }
+}
+
+@media(max-width:576px){
+    .isotope_selector {
+        width: 100% !important;
+    }
+}

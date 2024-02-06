@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+
+<link rel="stylesheet" src="{% static 'trabalheConosco/style.css'%}">
+
+{% endblock head %}
+
+
+{% block content %}
+<section class="about-area pt-100 pb-140" style="background-color:#F7F7F7;">
+    
+    <div class="col-12" style="display:flex; height:auto;">
+        <div class="container">
+            <div class="col-12" style="height:auto; padding-top:40px;">
+
+                {% comment %} @using (Html.BeginForm("InsertCurriculo", "TrabalheConosco", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true) {% endcomment %}
+<form class="form-horizontal">
+  <!-- Floating Labels Form -->
+                    {% comment %} @*<form class="row g-3">*@ {% endcomment %}
+                        <div class="flex-column flex-lg-row" style="display:flex;">
+                            <div class="col-md-6 mb-4">
+                                <img src="{% static 'img/trabalhe-conosco-aplication-site.jpg'%}" />
+                                {% comment %} @*<div class="form-floating col-8" style="padding: 20px; border-radius:5px; border: 1px solid #ced4da; text-align: left;">
+                                    <div style="margin-top:-30px; background-color:white; text-align:center; width:70%; margin-left:auto; margin-right:auto;">
+                                        <p >
+                                            Selecione o arquivo
+                                            (Arquivos PDF ou Word - Máx. 2Mb)
+                                        </p>
+                                    </div>
+                                    @Html.TextBoxFor(m => m.File.DocumentFile, new { type = "file", @class = "form-control", @id = "curriculoArquivo", @placeholder = "Curriculo", @style = "display:none", accept = ".pdf, .doc, .docx" })
+                                    <label for="curriculoArquivo" class="escolherArquivo" style="font-weight:400; letter-spacing:3px; font-size:14px; border-radius:50px; border:1px solid #ced4da;">Anexar</label>
+                                    <p style="color:red; display:none;" id="avisoArquivo">Arquivo muito grande</p>
+                                    <p id="nomeArquivo"></p>
+    
+                                </div>*@ {% endcomment %}
+                            </div>
+                            <div>
+                                <div class="divTitulo col-12 mx-auto text-lg-left text-center">
+                                    <h1 style="font-weight: 300; font-family: 'Open Sans', sans-serif!important; font-size: 60px; color:black;">
+                                        Trabalhe Conosco
+                                    </h1>
+                                    <h4 style="font-size: 18px; line-height:30px; margin-top: 20px; color: rgb(47 52 69); ">
+                                        Sabor Paulista constantemente busca novos talentos que estejam alinhados com os valores da nossa empresa. Venha fazer parte da equipe!
+                                    </h4>
+                                </div>
+                                <div class="col-md-12 mb-4 " style="margin-top:60px;">
+                                    <div class="form-floating col-12" style="padding: 0; display: flex; justify-content: right;">
+                                        <p style="font-size: 15px; text-align: right; color: rgb(47 52 69); margin-right: 20px; ">
+                                            Selecione o arquivo<br />
+                                            (Arquivos PDF ou Word - Máx. 2Mb)
+                                        </p>
+                                        <label for="curriculoArquivo" class="escolherArquivo" style="font-weight: 400; letter-spacing: 3px; font-size: 14px; border-radius: 5px; border: 1px solid #ced4da; height: calc(2.5em + .75rem + 2px);">Anexar</label>
+                                        <input type="file" class="form-control" style="display:none;"/>
+
+                                        {% comment %} @Html.TextBoxFor(m => m.File.DocumentFile, new { type = "file", @class = "form-control", @id = "curriculoArquivo", @placeholder = "Curriculo", @style = "display:none", accept = ".pdf, .doc, .docx" }) {% endcomment %}
+                                        {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mb-4 ">
+                                    <div class="form-floating col-12" style="padding:0;">
+                                        <input type="text" class="form-control"/>
+
+                                        {% comment %} @Html.TextBoxFor(m => m.Nome, new { @class = "form-control", @id = "nomeCurriculo", @placeholder = "Nome", style = "border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px; background-color:#F7F7F7;" })
+                                        @Html.ValidationMessageFor(m => m.Nome) {% endcomment %}
+                                        {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+                                    </div>
+                                </div>
+                                <div class="col-12" style="display:flex;">
+                                    <div class="col-6 mb-4 pl-0">
+                                        <div class="form-floating col-12" style="padding:0;">
+                                            <input type="text" class="form-control"/>
+
+                                            {% comment %} @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @id = "emailCurriculo", @placeholder = "Email", style = "border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px; background-color:#F7F7F7;" })
+                                            @Html.ValidationMessageFor(m => m.Email) {% endcomment %}
+    
+                                            {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+    
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-4 pr-0">
+                                        <div class="form-floating col-12" style="padding:0;">
+                                            <input type="text" class="form-control"/>
+                                            {% comment %} @Html.TextBoxFor(m => m.Telefone, new { @class = "form-control", @id = "telefoneCurriculo", @placeholder = "Telefone", style = "border-radius:5px; padding:23px; box-sizing:border-box; font-size:15px; background-color:#F7F7F7;" })
+                                            @Html.ValidationMessageFor(m => m.Telefone) {% endcomment %}
+    
+                                            {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4 ">
+                                    <div class="form-floating col-12" style="padding:0;">
+                                        <input type="text" class="form-control"></input>
+                                        {% comment %} @Html.TextAreaFor(m => m.Mensagem, new { @class = "form-control", @id = "mensagemCurriculo", @placeholder = "Mensagem", style = "border-radius:5px; padding:23px; height:200px; box-sizing:border-box; font-size:15px; background-color:#F7F7F7;" }) {% endcomment %}
+    
+                                        {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+    
+                                    </div>
+                                </div>
+                                <div class="col-12 flex-sm-row flex-column" style="display:flex; align-items:center; margin:0; justify-content:space-between; padding:0 15px;">
+                                    <div class="g-recaptcha" style="width:fit-content; margin-top:10px;" data-sitekey="6Lcj44knAAAAAJaoFWd0_CzY5wnuHsnKNE5XYCWt"></div>
+    
+                                    <div class="text-center mt-sm-0 mt-5">
+                                        <button type="submit" value="Cadastrar Curriculo" class="wpcf7-form-control cadastrarCurriculoBtn wpcf7-submit btn">Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            </div>
+    
+                        <!--</form>--><!-- End floating Labels Form -->
+                    {% comment %} } {% endcomment %}
+</form>
+                  
+
+            </div>
+            {% comment %} @*<div class="col-12 row-cols-6" style="border: 1px solid black; height: 40%; margin-top:20px;">
+
+                </div>*@ {% endcomment %}
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<a href="#topo" class="scroll-top" data-target="html" style="position: fixed !important; background-color: #ffb60dbf !important; position: fixed; right: 50px; bottom: 70px; z-index: 90 !important; opacity: 1 !important;">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="white" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" /></svg>
+</a>
+
+
+{% endblock content %}
+{% block scripts %}
+
+<scripts src="{% static 'trabalheConosco/style.js'%}"></script>
+
+{% endblock scripts %}

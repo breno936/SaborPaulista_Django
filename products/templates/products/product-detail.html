@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'products/style.css' %}">
+<link rel="stylesheet" href="{% static 'products/lightbox.min.css'%}">
+
+<link rel="stylesheet" href="{% static 'products/perfect-scrollbar.css'%}">
+
+<link rel="stylesheet" href="{% static 'products/nouislider.min.css'%}">
+
+<link rel="stylesheet" href="{% static 'products/slide100.css'%}">
+
+<link rel="stylesheet" href="{% static 'products/util.css'%}">
+<link rel="stylesheet" href="{% static 'products/main.css'%}">
+
+{% endblock head %}
+    
+    
+{% block content %}
+<section class="sec-product-detail bg0 p-t-40 p-b-70" style="background-color:#F7F7F7">
+    <div class="container">
+     
+
+
+        <div style="margin-bottom:20px; margin-left:40px; width:fit-content; cursor:pointer;" class="arrow-back">
+            <a href="/testprop/Produtos/Produtos" style="display: flex; align-items: center; ">
+
+                <span class="seta-" style="font-weight: 500; color: black; font-size: 20px; margin-right:15px;"></span>
+                <h4 style="font-weight:400; color:black; font-size:12px; letter-spacing:3px;">VOLTAR PRODUTOS</h4>
+            </a>
+        </div>
+        <div class="row">
+            <div class="col-md-7 col-lg-6">
+                <div class="m-r--30 m-r-0-lg">
+
+                    <div class="product-details">
+                        <div class="product-images">
+                            <div style="height: 600px; width: 100%; border: 1px solid #f1ede0;" class="mx-auto">
+                                <img src="../{{produto.foto_principal}}" class="imgCar" alt="Produto" style="width:100%; height:100%;">
+                            </div>
+                            <div class="thumbnails">
+                                <img src="/testprop/Content/UploadImages/ok_multigraos235504302.jpg" alt="Thumbnail 1" class="thumbnail active">
+                                <img src="/testprop/Content/UploadImages/ok_empanado_parmesao235544529.jpg" alt="Thumbnail 2" class="thumbnail">
+                                <img src="/testprop/Content/UploadImages/ok_empanado_parmesao235544529.jpg" alt="Thumbnail 3" class="thumbnail">
+
+                                <!-- Adicione mais thumbnails aqui -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-lg-6">
+                <div class="p-l-70 p-t-35 p-l-0-lg">
+                    <h4 class="js-name1 categoriaCar txt-l-104 cl3 p-b-16" style="font-size: 15px; font-family: 'Open Sans', sans-serif !important; padding: 0; color: #FFB60D !important;">{{produto.categoriaid}}</h4>
+                    <h4 class="js-name1 nomeCar txt-l-104 cl3 p-b-16" style="font-family: 'Open Sans', sans-serif !important; margin-top:10px;">
+                        {{ produto.nome }}
+                    </h4>
+
+
+                    <p class="txt-s-101 cl6" style="font-family: 'Open Sans', sans-serif !important ">
+                        {% for t in produto.atributos.all %}
+                            {{t}} <br>
+                        {% endfor %}
+                        <!-- Livre de glúten.<br>
+Sem aroma ou essências artificiais.<br>
+Sem conservantes.<br> -->
+<!-- Sem corantes.<br>  -->
+                        {{ produto.descricao }}
+                    </p><br>
+                    <p class="txt-s-101 cl6" style="font-family: 'Open Sans', sans-serif !important">
+                        <b>Ingredientes:</b> {{produto.ingredientes}}
+                    </p>
+                    <div class="flex-w flex-m p-t-55 p-b-30" style="font-family: 'Open Sans', sans-serif !important">
+                        <div class="wrap-num-product flex-w flex-m bg12 p-rl-10 m-r-30 m-b-30" style="flex-wrap:nowrap; width:170px;">
+                            <div class="btn-num-product-down  qtyminus flex-c-m fs-29" onclick="qtyminus('num-product')" style="padding:5px 6px; box-sizing:content-box;"><svg xmlns="http://www.w3.org/2000/svg" height="0.5em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="rgb(153, 153, 153)" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg></div>
+                            <input class="txt-m-102 cl6 txt-center num-product" type="number" name="num-product" value="1">
+                            <div class="btn-num-product-up qtyplus flex-c-m  fs-16" onclick="qtyplus('num-product')" style="padding: 5px 6px; box-sizing: content-box;"><svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="rgb(153, 153, 153)" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></div>
+                        </div>
+                        <button class="flex-c-m txt-s-103 cl0 size-a-2 hov-btn2 trans-04 m-b-30 js-addcart1" style="text-transform:none; letter-spacing:3px;" onclick="addElementInCard(2)">
+                            Orçar
+                        </button>
+                    </div>
+
+                    <div class="txt-s-107 p-b-6" style="height: 150px;">
+
+                        <div style="width:70%; height:70%;">
+                            <img src="{% static 'img/ok_dadinho.jpg' %}" style="width:100%; height:100%;">
+                        </div>
+                    </div>
+                    <div class="txt-s-107 p-b-6">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="tab02 p-t-10">
+
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active nav-topicos" data-toggle="tab" href="#description" style="font-family: 'Open Sans', sans-serif !important" role="tab" aria-expanded="false">Modo de Preparo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-topicos" data-toggle="tab" href="#info" role="tab" style="font-family: 'Open Sans', sans-serif !important" aria-expanded="false">Tabela Nutricional</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-topicos" data-toggle="tab" href="#conservacao" role="tab" style="font-family: 'Open Sans', sans-serif !important" aria-expanded="false">Conservação</a>
+                </li>
+
+            </ul>
+
+            <div class="tab-content" style="padding:0 30px;">
+
+                <div class="tab-pane fade active show" id="description" role="tabpanel" aria-expanded="false" style="opacity:1;">
+                    <div class="p-t-30">
+                        <p class="txt-s-112 cl9" style="font-family: 'Open Sans', sans-serif !important">
+                            {{produto.modopreparo}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="info" role="tabpanel" aria-expanded="false">
+                    <ul class="p-t-21" style="font-family: 'Open Sans', sans-serif !important">
+                            <li class="txt-s-101 flex-w how-bor2 p-tb-14">
+                                <span class="cl6 size-w-54">
+                                    Valor Energético
+                                </span>
+                                <span class="cl9 size-w-55">
+                                    150 kcal
+                                </span>
+                            </li>
+                                                                                                                                                                                                                                                    <li class="txt-s-101 flex-w how-bor2 p-tb-14">
+                                <span class="cl6">
+                                    Média de 150 kcal por porção de 50g, 300 kcal por 100g de produto.
+Ausência de alegações de alto teor de gorduras saturadas, sódio ou açúcares (conforme legislação atual).
+                                </span>
+
+                            </li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="conservacao" role="tabpanel" aria-expanded="false">
+                    <div class="p-t-30">
+                        <p class="txt-s-112 cl9" style="font-family: 'Open Sans', sans-serif !important">
+                           {{produto.conservacao}}
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+    {% block scripts %}
+
+<scripts src="{% static 'products/slide100.js'%}"></script>
+<scripts src="{% static 'products/slide100-custom.js'%}"></script>
+
+{% endblock scripts %}

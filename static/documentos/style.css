@@ -1,0 +1,223 @@
+.expandContract {
+    z-index: 999;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+    .expandContract svg {
+        pointer-events: none;
+    }
+
+    .expandContract:hover .iconMaximize {
+        transform: scale(1.3);
+    }
+
+.iconMaximize {
+    display: block;
+}
+
+.iconMinimize {
+    transform: scale(1.3);
+    display: none;
+}
+
+.expandContract:hover .iconMinimize {
+    transform: scale(1);
+}
+
+.bottomDescGallery {
+    display: flex !important;
+    position: relative;
+    width: 100%;
+    height: 30px;
+    justify-content: space-between;
+    padding-top: 20px;
+    /*            padding-right: 10px;
+*/ box-sizing: border-box;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    color: black;
+    align-items: center;
+}
+
+.name-image {
+    color: black;
+}
+
+.close-button {
+    cursor: pointer;
+    color: black;
+    background-color: transparent;
+    border: 1px solid #FFB60D;
+    color: black;
+    padding: 13px;
+    padding-right: 32px;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 11px;
+    display: inline-block;
+    letter-spacing: 1px;
+    transition: all 0.1s linear;
+}
+
+    .close-button::after {
+        content: 'X';
+        padding: 13px 10px;
+        display: inline-block;
+        background-color: #FFB60D !important;
+        border-radius: 70px;
+        position: absolute;
+        top: 40%;
+        right: 0;
+        color: white;
+    }
+
+    .close-button:hover {
+        color: white !important;
+        background-color: #FFB60D;
+        border-color: transparent;
+    }
+
+.lightbox-overlay {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: all 0.2s linear;
+}
+
+.backBlack {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.8;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9998;
+    display: none;
+}
+
+.lightbox {
+    position: relative !important;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 600px;
+    height: 80%;
+    text-align: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 30px;
+    transition: all 0.2s linear;
+}
+
+.imgMiniatura {
+    transition: all 0.1s linear !important;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    width: 100%;
+    height: 90%;
+    position: relative;
+    margin-bottom: auto !important;
+    transition: all 0.2s linear;
+}
+
+#documentoContainer {
+    transition: all 0.1s linear;
+}
+
+.isotope_selector:hover {
+    box-shadow: 0px 0px 10px #ffb60d82;
+}
+
+.isotope_selector {
+    cursor: pointer;
+}
+
+.button {
+    transition: all .2s ease-in-out;
+    -webkit-appearance: none;
+    border-radius: 100px;
+    font-family: inherit;
+    appearance: none;
+    background: none;
+    font-weight: 300;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 20px;
+    outline: none;
+    opacity: 0.9;
+    border: 1px solid transparent;
+    color: rgb(47 52 69);
+    margin-left: 10px;
+    width: auto;
+}
+
+    .button:hover,
+    .button.active {
+        opacity: 1;
+        color: #FFB60D;
+        border: 1px solid #FFB60D;
+        border-radius: 50px;
+    }
+
+.download-button:hover {
+    color: rgba(255, 182, 13, 0.75);
+}
+
+    .download-button:hover path {
+        fill: rgba(255, 182, 13, 0.75);
+    }
+
+.imgMiniatura:hover img {
+    transform: scale(1.3);
+}
+
+.imgMiniatura svg {
+    position: absolute;
+    opacity: 0;
+    transition: all 0.3s linear;
+    pointer-events: none;
+}
+
+.imgMiniatura:hover svg {
+    opacity: 1;
+}
+
+.imgMiniatura {
+    overflow: hidden;
+}
+
+.active {
+    color: #d86c6f;
+}
+
+.searchButton:hover {
+    background-color: rgb(255 204 85 / 75%) !important;
+}
+
+.isotope_selector {
+    display: flex;
+    padding: 30px 15px;
+    align-items: center;
+    width: 50%;
+}
+
+@media(max-width:768px){
+.isotope_selector {
+    width: 100% !important;
+}
+}

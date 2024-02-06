@@ -1,0 +1,605 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html style="scroll-behavior:smooth!important;">
+<head>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+
+    <link rel="stylesheet" href="{% static 'base/style.css' %}">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="~/icons/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/icons/android-chrome-192x192.png">
+
+
+
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon.ico">
+
+
+
+
+    <title>Sabor Paulista - Sua Fábrica e Distribuidora de Pão de Queijo</title>
+
+
+    <link rel="stylesheet" href="{% static 'othersCSS/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/style.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/cookieconsent.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'othersCSS/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/css.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/css(1).css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/css(2).css' %}">
+
+    <link rel="stylesheet" href="{% static 'othersCSS/main.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/icon-dukamarket.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/spacing.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/swiper-bundle.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/css3.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/_product.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/_theme.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/_root.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/meanmenu.css' %}">
+
+    <link rel="stylesheet" href="{% static 'othersCSS/boxicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/quill.snow.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/quill.bubble.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/remixicon.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'othersCSS/Admin/style.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'othersCSS/Representantes.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/_about.min.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/_animation.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/collegare.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/icon-insta-style.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/icon-facebook-style.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/icon-whats-style.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/icon-pin-style.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/icon-phone-style.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/icon_suporte-style.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/icon_consolidada-style.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/icon_frota-style.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/icon_fabricacao-style.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/seta.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/text-rotator.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'othersCSS/css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/modernizr' %}"> {% endcomment %}
+    {% comment %} @if (IsSectionDefined("Contact"))
+    {
+        @RenderSection("Contact", required: false)
+    }
+    else
+    {
+        @Styles.Render("~/Content/Home_files/Admin/styleMain.css")
+    }
+    
+
+     {% endcomment %}
+
+
+    {% comment %} @if (IsSectionDefined("About"))
+    {
+        @RenderSection("About", required: false)
+    }
+
+    @if (IsSectionDefined("Documents"))
+    {
+        @RenderSection("Documents", required: false)
+        @*<script src="https://cdn.tailwindcss.com"></script>*@
+    }
+    @if (IsSectionDefined("Representantes"))
+    {
+        @RenderSection("Representantes", required: false)
+        @*<script src="https://cdn.tailwindcss.com"></script>*@
+    }
+    @if (IsSectionDefined("FoodService"))
+    {
+        @RenderSection("FoodService", required: false);
+    } {% endcomment %}
+
+    <!-- Biblioteca CSS do Plyr -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css" />
+
+
+
+  
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+
+    {% comment %} <link href="https://allfont.net/allfont.css?fonts=open-sans-extrabold" rel="stylesheet" type="text/css" /> {% endcomment %}
+
+
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="robots" content="index, follow">
+    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QGEYF913E8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QGEYF913E8');
+    </script>
+    
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+   
+    {% comment %}   @if (IsSectionDefined("SingleProduct"))
+  {
+        @RenderSection("SingleProductStyles", required: false);
+    } {% endcomment %}
+
+    {% block head %}{% endblock head %}
+
+</head>
+<body style="background: #fff !important;">
+    <!-- bloc-0 -->
+    <a name="topo"></a>
+    <div class="bloc bgc-white bloco-branco-topo" style="border-bottom: 1px solid #00000012; height: 90px; padding: 0;" id="bloc-0">
+        <div class="container bloc-sm navbartopo" style="box-shadow: rgb(0 0 0 / 20%) 0px 0px 5px; position: fixed; padding: 5px 0px; z-index: 999; width: 100vw; max-width: 100vw; background-color: white; height: inherit; ">
+            <div class="row" style="padding-bottom:0; height:100%;">
+                <div class="col-12 container mx-auto navFlex" style="display: flex; justify-content: center; align-items: center; width: 100%; max-width:1300px;">
+                    {% if request.path == "/" %}
+                    
+                        <a class="navbar-brand logobolado" href="@Url.Action("Index", "Home")" style="top:-20px; position:relative!important;"><img src="{% static 'img/logotipo_home_principal.png'%}" alt="logo"></a>
+
+                    {% endif %}
+                    <nav class="navbar pt-0 navbar-light row navbar-expand-md flex-column" role="navigation" style="margin-bottom:0!important; padding:0!important; width:100%;">
+
+                        {% comment %} @*<button id="nav-toggle" type="button" class="ui-navbar-toggler navbar-toggler border-0 p-0" data-toggle="collapse" data-target=".navbar-41605" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>*@ {% endcomment %}
+                        <div class="collapse navbar-collapse navbar-41605 d-flex pl-0" style="width: 100%;">
+                            {% if request.path != "/" %}
+                          
+                                
+
+                                <a class="navbar-brand mx-auto" style="padding:0; padding-right:15px;" href=""><img style="" src="{% static 'img/logo_menu_interno_sem_box.png'%}" alt="logo"></a>
+
+
+                            {% endif %}
+                            <div class="navbar-brand mx-auto" id="iconLadoHome" style="padding:0; padding-right:15px; display:none; height:47px; margin-top:">
+                                <a href="@Url.Action("Index", "Home")">
+                                    <img style=" width:100%; height:100%;" src="{% static 'img/logo_menu_interno_sem_box.png'%}" alt="logo">
+                                </a>
+                            </div>
+
+                            <ul class="site-navigation nav navbar-nav mx-auto justify-content-center menu">
+
+                                <li class="nav-item menu-item px-0">
+                                    <a class="nav-link a-btn px-4" href="{% url 'home' %}">Home</a>
+                                    {% comment %} @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
+                                </li>
+                                <li class="nav-item menu-item px-0" id="sobreNosLi">
+                                    <a class="nav-link a-btn px-4" onclick="travaSubMenu(this)">Sobre Nós</a>
+                                    <div class="subMenu">
+                                        <ul>
+                                            <li class="nav-item menu-item px-0">
+                                                <a class="nav-link nav-link-sub a-btn px-4" href="{% url 'sobreNos' %}">Sobre-Nos</a>
+                                                {% comment %} @Html.ActionLink("A empresa", "Sobre-Nos", "Sobrenos", null, new { @class = "nav-link nav-link-sub a-btn px-4" }) {% endcomment %}
+
+                                            </li>
+                                            <li class="nav-item menu-item px-0">
+                                                <a class="nav-link nav-link-sub a-btn px-4" href="{% url 'trabalheConosco' %}">Trabalhe Conosco</a>
+                                                {% comment %} @Html.ActionLink("Trabalhe Conosco", "TrabalheConosco", "TrabalheConosco", null, new { @class = "nav-link-sub nav-link a-btn px-4" }) {% endcomment %}
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item menu-item px-0">
+                                    <a class="nav-link a-btn px-4" href="{% url 'products' %}">Produtos</a>
+                                    {% comment %} @Html.ActionLink("Produtos", "Produtos", "Produtos", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
+                                </li>
+                                <li class="nav-item menu-item px-0">
+                                    <a class="nav-link a-btn px-4" href="{% url 'foodService' %}">FoodService</a>
+                                    {% comment %} @Html.ActionLink("Food Service", "FoodService", "FoodService", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
+                                </li>
+                                <li class="nav-item menu-item px-0">
+                                    <a class="nav-link a-btn px-4" href="{% url 'representantes' %}">Representantes</a>
+                                    {% comment %} @Html.ActionLink("Representantes", "Representantes", "Representante", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
+                                </li>
+                                <li class="nav-item menu-item px-0">
+                                    <a class="nav-link a-btn px-4" href="{% url 'documentos' %}">Documentos</a>
+                                    {% comment %} @Html.ActionLink("Documentos", "Documentos", "Documentos", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
+                                </li>
+                                <li class="nav-item menu-item px-0">
+                                    <a class="nav-link a-btn px-4" href="{% url 'contato' %}">Contate-nos</a>
+                                    {% comment %} @Html.ActionLink("Contate-nos", "Contato", "Contato", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
+                                </li>
+
+                            </ul>
+                            <button class="scroll-top carrinhoMenu" onclick="openCloseCard()" data-target="html" style="position: relative !important; right:0!important; margin-left:20px;">
+                                <svg style="width:20px; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.0 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" /></svg>
+                                <div id="numberItens" style="display:none; width:20px; height:20px; border-radius:50px; background-color:black; margin-top:-20px">
+
+                                </div>
+                                <div id="boxMsg" style="font-size: 10px;opacity:0; transition:all 0.3s linear; padding:10px; position: absolute; margin-top:10px; padding-top:3px; padding-bottom:3px; left:-120px; color: black; width:max-content; height: 30px; background-color: white; border:1px solid black; border-radius:50px;"><p style="font-size:12px; font-weight:400; color:black;">SOLICITAR ORÇAMENTO</p></div>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- bloc-0 END -->
+    <div class="navbar navbar-inverse navbar-fixed-top" id="containerNavMobile" style="position:fixed; display:none; top:0; ">
+        <div class="container">
+            <div class="navbar-header vw-100 d-flex justify-content-between">
+                <p class="mg-md linkwhats" style="color:white;margin-top:15px;">
+
+                    <img src="{% static 'img/whatsapp.png'%}" />
+                    (19) 97409-9730
+                </p>
+                <div style="margin-left:auto;">
+                    <button class="scroll-top" onclick="openCloseCard()" data-target="html" style="position: relative !important;">
+                        <svg style="width:20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.0 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" /></svg>
+                        <div id="numberItensMobile" style="display:none; width:20px; height:20px; border-radius:50px; background-color:black; margin-top:-20px">
+
+                        </div>
+                    </button>
+                    <button style="cursor: pointer;" onclick="openCloseNav(this)" type="button" class="navbar-toggle" data-toggle="collapse" title="mais opções">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </div>
+            <div id="navbarMobile" style="height:0!important; transition:all 0.2s ease-in-out; overflow:hidden!important; display:block!important;" class="collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item menu-item">
+                        <a class="nav-link a-btn px-4" href="{% url 'home' %}">Home</a>
+                        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link a-btn px-4" })
+                    </li>
+                    <li class="nav-item menu-item" id="sobreNosLi">
+                        <a class="nav-link a-btn px-4" >Sobre Nós</a>
+                        <ul class="subMenu">
+                            <li class="nav-link menu-item px-0">
+                                <a class="nav-link a-btn px-4" href="{% url 'sobreNos' %}">Sobre-nos</a>
+                                {% comment %} @Html.ActionLink("A empresa", "Sobre-Nos", "Sobrenos", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
+
+                            </li>
+                            <li class="nav-item menu-item px-0">
+                                <a class="nav-link a-btn px-4" href="{% url 'trabalheConosco' %}">Trabalhe Conosco</a>
+                                {% comment %} @Html.ActionLink("Trabalhe Conosco", "TrabalheConosco", "TrabalheConosco", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item menu-item">
+                        <a class="nav-link a-btn px-4" href="{% url 'products' %}">Produtos</a>
+                        {% comment %} @Html.ActionLink("Produtos", "Produtos", "Produtos", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
+                    </li>
+                    <li class="nav-item menu-item">
+                        <a class="nav-link a-btn px-4" href="{% url 'representantes' %}">Representantes</a>
+                        {% comment %} @Html.ActionLink("Representantes", "Representantes", "Representante", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
+                    </li>
+                    <li class="nav-item menu-item">
+                        <a class="nav-link a-btn px-4" href="{% url 'documentos' %}">Documentos</a>
+                        {% comment %} @Html.ActionLink("Documentos", "Documentos", "Documentos", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
+                    </li>
+                    <li class="nav-item menu-item">
+                        <a class="nav-link a-btn px-4" href="{% url 'contato' %}">Contate-nos</a>
+                        {% comment %} @Html.ActionLink("Contate-nos", "Contato", "Contato", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="position-relative" style="display:none;width:100%; height:70px; opacity:0;" id="containerNavRelative">
+
+    </div>
+    {% block content %}{% endblock content %}
+    <!-- bloc-7 -->
+    <div class="bloc none rodape bgc-olive-drab-7" id="bloc-7" style="overflow: hidden; height: auto; margin-top: 100px; position: relative; background-color: white;">
+        <div class="container bloc-lg bloc-lg-lg" style=" padding: 20px 40px;">
+            <div class="row justify-content-start justify-content-md-between">
+                <div class="col-md-5 col-sm-12 bloco-rodape order-lg-0 p-5 p-md-0">
+                    <h4 class="mg-md text-md-left text-center tc-black">
+                        <img src="{% static 'img/logotipo_negativado_rodape.png'%}" />
+                    </h4>
+                    <h3 class="text-center text-md-left" style="font-size: 13px; color: #7a5941; font-weight:600; line-height:25px;">
+                        Este website tem caráter informativo. O consumidor jamais<br />
+                        deve usar seu conteúdo para definir ingestão. Segundo<br />
+                        recomendação do Conselho Federal de Medicina, em caso de <br />
+                        dúvida, o médico/nutricionista sempre deve ser consultado, pois<br />
+                        só ele está habilitado para praticar a indicação nutricional.     
+
+                    </h3>
+
+                </div>
+                <div class="col-md-3 col-sm-12" style="height:fit-content;">
+
+                    <p class="p-bloc-8-style endereco" id="linksFooter" style="color: #7a5941!important;">
+                        <a href="{% url 'home' %}" class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left">Home</a>
+                        {% comment %} @Html.ActionLink("Home", "Index", "Home", null, new { @class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left" }) {% endcomment %}
+                        <a href="{% url 'sobreNos' %}" class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left">Sobre-nos</a>
+                        {% comment %} @Html.ActionLink("A Empresa", "Sobre-nos", "Sobrenos", null, new { @class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left" }) {% endcomment %}
+                        <a href="{% url 'trabalheConosco' %}" class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left">Trabalhe Conosco</a>
+                        {% comment %} @Html.ActionLink("Trabalhe Conosco", "TrabalheConosco", "TrabalheConosco", null, new { @class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left" }) {% endcomment %}
+                        <a href="{% url 'representantes' %}" class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left">Torne-se um Representante</a>
+                        {% comment %} @Html.ActionLink("Torne-se um Representante", "Representantes", "Representante", null, new { @class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left" }) {% endcomment %}
+                        <a href="{% url 'products' %}" class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left">Produtos</a>
+                        {% comment %} @Html.ActionLink("Produtos", "Produtos", "Produtos", null, new { @class = "a-btn a-block footer-link link-padding-top  text-sm-center text-md-left" }) {% endcomment %}
+                        <a href="{% url 'foodService' %}" class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left">Food Service</a>
+                        {% comment %} @Html.ActionLink("Food Service", "FoodService", "FoodService", null, new { @class = "a-btn a-block footer-link link-padding-top  text-sm-center text-md-left" }) {% endcomment %}
+                        <a href="{% url 'documentos' %}" class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left">Documentos</a>
+                        {% comment %} @Html.ActionLink("Documentos", "Documentos", "Documentos", null, new { @class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left" }) {% endcomment %}
+                        <a href="{% url 'documentos' %}" class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left">Acervo de Vídeos</a>
+                        {% comment %} @Html.ActionLink("Acervo de Vídeos", "Documentos", "Documentos", null, new { @class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left" }) {% endcomment %}
+                        <a href="{% url 'representantes' %}" class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left">Representantes</a>
+                        {% comment %} @Html.ActionLink("Representantes", "Representantes", "Representante", null, new { @class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left" }) {% endcomment %}
+                        <a href="{% url 'contato' %}" class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left">Contato</a>
+                        {% comment %} @Html.ActionLink("Contato", "Contato", "Contato", null, new { @class = "a-btn a-block footer-link link-padding-top text-sm-center text-md-left" }) {% endcomment %}
+                    </p>
+                    <div>
+
+                        {% comment %} @*<div class="">
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        window.cookieconsent.initialise({
+                                            container: document.getElementById("content"),
+                                            palette: {
+                                                popup: {
+                                                    background: "rgba(12,30,63,0.85) !important",
+
+                                                },
+                                                button: { background: "#008ef2", text: '#FFF' },
+                                            },
+                                            theme: "block",
+                                            position: "bottom",
+                                            content: {
+                                                message: '<div class="col-6">Para melhorar a sua experiência na plataforma e prover serviços personalizados, utilizamos cookies. Ao aceitar, você terá acesso a todas as funcionalidades do site. Se clicar em "Rejeitar Cookies", os cookies que não forem estritamente necessários serão desativados. Para escolher quais quer autorizar, clique em "Gerenciar cookies". Saiba mais em nossa.</div>',
+                                                dismiss: 'Got it!',
+                                                link: 'Declaração de Cookies',
+                                                href: 'https://www.termsfeed.com/blog/sample-cookies-policy-template/',
+                                            },
+                                            revokable: true,
+                                            onStatusChange: function (status) {
+                                                console.log(this.hasConsented() ?
+                                                    'enable cookies' : 'disable cookies');
+                                            },
+                                            law: {
+                                                regionalLaw: false,
+                                            },
+                                            location: true,
+                                        });
+                                    });
+                                </script>
+
+                            </div>*@ {% endcomment %}
+                    </div>
+                </div>
+                <div class="d-flex col-12 col-md-4 flex-wrap align-items-md-start align-items-center p-md-0 p-5" style="flex-direction: column; justify-content: left;">
+                    <div class="" style="width: fit-content; display: flex; align-items: center; padding-left:5px;">
+                        <div>
+                            <img src="{% static '/img/icon_pin.png'%}" />
+                        </div>
+                        <h3 class=" text-lg-left tc-shamrock-green mt-0 ml-4" style="font-size:14px;">
+                            <a class="ltc-davys-grey linkwhats" href="https://goo.gl/maps/ECMeMUFBFscFtMMD6" target="_blank">Rua Rosa Pinelli Gomes, 225<br />Vila Real Continuação <br />13183-091 • Hortolândia/SP</a><br>
+                        </h3>
+                    </div>
+
+                    <div class="offset-sm-0" style="padding-left: 0; width: fit-content; display: flex; align-items: center; padding: 5px;">
+                        <div class="text-left">
+
+                            <span class="fab icon-md icon-shamrock-green"> <img src="{% static 'img/icon_phone.png'%}" /></span>
+                        </div>
+                        <div>
+                            <a class="ltc-davys-grey ml-4 linkwhats">(19) 3909-1511</a>
+                        </div>
+                    </div>
+                    <div class="" style="padding-left: 0; display: flex; width: fit-content; align-items: center; padding: 5px;">
+                        <div class="text-left">
+                            <span class="fab icon-md icon-shamrock-green"><img src="{% static 'img/icon_whatsapp.png'%}" /></span>
+                        </div>
+                        <div>
+                            <a class="ltc-davys-grey ml-4 linkwhats" href="https://wa.me/+5519974099730" target="_blank">(19) 97409-9730</a>
+                        </div>
+                    </div>
+                    <div style="margin-top:50px; padding:5px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="svgSocialIconFooter" height="1.3em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="svgSocialIconFooter" style="margin-left:20px;" height="1.3em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="svgSocialIconFooter" style="margin-left:20px;" height="1.3em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" /></svg>
+                    </div>
+
+                </div>
+                <div class="col-8" style="padding:0;margin-top:50px; color:black; justify-content:space-between; font-size:13px; display:flex; align-items:center;">
+                    <div style="padding-left:15px;">
+                        <p style="font-size:13px; transform:translate(0, -100%);">
+                            ©  {% now "Y" %} - Todos os direitos reservados
+                        </p>
+
+                        <p style="font-size:13px;">
+                            Todas as imagens nesse site são tratadas digitalmente e ilustrativas
+
+                        </p>
+
+                    </div>
+                    <div style="margin-left:auto; transform:translate(105%,0); padding-left:15px;">
+                        <p style="font-style:italic; font-weight:100; font-size:10px; color:black; margin:0;">Design by</p>
+                        <p class="collegare-logotipo" style="color: #0000003b; cursor: pointer; font-size:18px;"></p>
+                    </div>
+                    <div></div>
+                    {% comment %} @*© Copyright Sabor Paulista<span style="margin-left:5px; margin-right:5px;"> - </span>Todos os direitos reservados<span style="margin-left: 5px; margin-right:5px;">
+                            -
+                        </span>Desenvolvido❤️por Collegare Propaganda*@ {% endcomment %}
+
+                </div>
+                <div class="col-12" style="margin-top:50px;">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="bg-page-header1 col-12" style="height:110px; background-position:bottom;"></div>
+    <div id="cardDiv" class="tpcartinfo tp-cart-info-area position-fixed" style="z-index:9999; right:0px; top:0;">
+        <button class="tpcart__close" onclick="openCloseCard()">X</button>
+        <div class="tpcart">
+            <h4 class="tpcart__title">Seu Carrinho</h4>
+            <div class="tpcart__product">
+                <div class="tpcart__product-list" style="overflow-y:auto;">
+                    <ul id="listaProducts">
+                    </ul>
+
+
+                </div>
+                <div class="tpcart__checkout">
+                    <div class="tpcart__total-price d-flex justify-content-between align-items-center">
+                        {% comment %} @*<span> Subtotal:</span>
+                            <span class="heilight-price"> $300.00</span>*@ {% endcomment %}
+                    </div>
+                    <div class="tpcart__checkout-btn">
+                        <a class="tpcheck-btn" style="background-color: transparent; color: black; border: 1px solid #ced4da; text-transform: none; font-size: 14px; font-weight: 400; letter-spacing: 2px;" onclick="solicitarOrçamento()">Orçamento</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="cartbody-overlay"></div>
+    <div id="divBlack" style="z-index:98; opacity:0.4; width:100vw; top:0; height:100vh; position:fixed; display:none; background-color:black;" onclick="openCloseCard()"></div>
+    <!-- Cookie notification -->
+
+    <div id="whats" class="whats w-14 h-14 fixed cursor-pointer"><img src="{% static 'img/whatsapp-icone.d36c0bfb.png'%}" class="w-full h-full" onclick="openWP()"></div>
+
+
+
+    <div class="box_whatsapp" style="display: none;">
+        <div class="form_whatsapp">
+            <div class="wp_cabecalho">
+                Olá! Preencha os campos abaixo para iniciar uma conversa no WhatsApp <a href="javascript:void(0)" class="wp_close" onclick="closeWP();">
+                    <svg onclick="closeWP()" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.333 348.334">
+                        <title>Fechar</title>
+                        <path d="M336.559,68.611L231.016,174.165l105.543,105.549c15.699,15.705,15.699,41.145,0,56.85
+      c-7.844,7.844-18.128,11.769-28.407,11.769c-10.296,0-20.581-3.919-28.419-11.769L174.167,231.003L68.609,336.563
+      c-7.843,7.844-18.128,11.769-28.416,11.769c-10.285,0-20.563-3.919-28.413-11.769c-15.699-15.698-15.699-41.139,0-56.85
+      l105.54-105.549L11.774,68.611c-15.699-15.699-15.699-41.145,0-56.844c15.696-15.687,41.127-15.687,56.829,0l105.563,105.554
+      L279.721,11.767c15.705-15.687,41.139-15.687,56.832,0C352.258,27.466,352.258,52.912,336.559,68.611z"></path>
+                    </svg>
+                </a>
+            </div><div class="wp_form"><div><input type="text" placeholder="Seu Nome" id="wp_nome" class="wp_input"><input type="text" placeholder="Seu E-mail" id="wp_email" class="wp_input"><input type="text" placeholder="Seu WhatsApp (DDD) Número" id="wp_whatsapp" class="wp_input" maxlength="20" onkeyup="formataTelefone(this,event)"><a href="javascript:void(0);" onclick="iniciarChat();" class="wp_iniciar">Iniciar a conversa</a></div></div>
+        </div>
+    </div>
+
+
+    {% comment %} <script src="{% static 'othersJS/jquery '%}"/>
+    <script src="{% static 'othersJS/bootstrap '%}"/> {% endcomment %}
+    <script src="{% static 'othersJS/jquery.min.js '%}"></script>
+    <script src="{% static 'othersJS/bootstrap.bundle.min.js '%}"></script>
+    <script src="{% static 'othersJS/blocs.min.js '%}"></script>
+    <script src="{% static 'othersJS/lazysizes.min.js '%}"></script>
+    <script src="{% static 'othersJS/cookieconsent.min.js '%}"></script>
+    <script src="{% static 'othersJS/scrollFX.js '%}"></script>
+
+
+    <script src="{% static 'othersJS/meanmenu.js '%}"></script>
+    <script src="{% static 'othersJS/jquery-ui.js '%}"></script>
+    <script src="{% static 'othersJS/ajax-form.js '%}"></script>
+    <script src="{% static 'othersJS/countdown.js '%}"></script>
+    <script src="{% static 'othersJS/imagesloaded-pkgd.js '%}"></script>
+    <script src="{% static 'othersJS/isotope-pkgd.js '%}"></script>
+    <script src="{% static 'othersJS/wow.js '%}"></script>
+    <script src="{% static 'othersJS/counterup.js '%}"></script>
+    <script src="{% static 'othersJS/magnific-popup.js '%}"></script>
+    <script src="{% static 'othersJS/slick.js '%}"></script>
+    <script src="{% static 'othersJS/nice-select.js '%}"></script>
+    <script src="{% static 'othersJS/swiper-bundle.js '%}"></script>
+    <script src="{% static 'othersJS/waypoints.js' %}"></script>
+
+    <script src="{% static 'othersJS/apexcharts.min.js' %}"></script>
+    <script src="{% static 'othersJS/chart.umd.js' %} "></script>
+    <script src="{% static 'othersJS/echarts.min.js'%}"></script>
+    <script src="{% static 'othersJS/quill.min.js'%}"></script>
+    <script src="{% static 'othersJS/simple-datatables.js'%}"></script>
+    <script src="{% static 'othersJS/tinymce.min.js'%}"></script>
+    <script src="{% static 'othersJS/validate.js'%}"></script>
+    <script src="{% static 'othersJS/Admin/main.js'%}"></script>
+    <script src="{% static 'othersJS/main.js'%}"></script>
+    <script src="{% static 'othersJS/popup.js'%}"></script>
+    <script src="{% static 'othersJS/mainContact.js'%}"></script>
+    <script src="{% static 'othersJS/text-rotator.js'%}"></script>
+
+    {% comment %} 
+     {% endcomment %}
+
+    {% comment %} @Scripts.Render("~/Content/Home_files/SingleProduct/slide100.js")
+    @if (IsSectionDefined("SingleProduct"))
+    {
+        @RenderSection("SingleProduct", required: false);
+    } {% endcomment %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/4.1.0/dotdotdot.js" integrity="sha512-y3NiupaD6wK/lVGW0sAoDJ0IR2f3+BWegGT20zcCVB+uPbJOsNO2PVi09pCXEiAj4rMZlEJpCGu6oDz0PvXxeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <!-- Biblioteca JavaScript do Plyr -->
+    <script src="https://cdn.plyr.io/3.6.4/plyr.js"></script>
+
+    <!-- Complemento "plyr-youtube" para suporte a vídeos do YouTube -->
+    <script src="https://cdn.plyr.io/3.6.4/plyr.polyfilled.js"></script>
+
+    <!-- Biblioteca JavaScript da API do YouTube -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="{% static 'base/style.js' %}"></script>
+
+
+
+
+
+        {% comment %} @RenderSection("scripts", required: false)
+
+    @if (IsSectionDefined("scriptContact"))
+    {
+        @RenderSection("scriptContact")
+    }
+    @if (IsSectionDefined("scriptRepresentante"))
+    {
+        @RenderSection("scriptRepresentante")
+    } {% endcomment %}
+    {% block scripts %}{% endblock scripts %}
+
+    </body>
+</html>

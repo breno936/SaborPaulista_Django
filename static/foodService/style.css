@@ -1,0 +1,59 @@
+.botaoEnviar:hover {
+    background-color: #FFB60D !important;
+    border-color: transparent !important;
+    color: white !important;
+}
+
+.square-radio {
+    display: none; /* Esconder o radio button original */
+}
+
+.square-radio-label {
+    display: inline-block;
+    width: 20px; /* Largura e altura iguais para criar um quadrado */
+    height: 20px;
+    background-color: transparent; /* Cor de fundo do quadrado */
+    border: 1px solid #ccc; /* Borda do quadrado */
+    border-radius: 4px; /* Borda arredondada para parecer um botão */
+    cursor: pointer;
+}
+
+    .square-radio-label:hover {
+        box-shadow: 0px 0px 5px #00000066;
+    }
+/* Estilo para quando o radio button estiver selecionado */
+.square-radio:checked + .square-radio-label {
+    background-color: #FFB60D; /* Cor de fundo quando selecionado */
+    border-color: black; /* Borda quando selecionado */
+}
+
+
+
+.imgExportacao {
+    animation-name: upDown;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+}
+
+@keyframes upDown {
+    0% {
+        top: 0px;
+    }
+
+    50% {
+        top: -20px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+textarea::placeholder {
+    font-size: 13px; /* Defina o tamanho desejado */
+}
+.fieldsFood{
+    border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px; background-color:#F7F7F7;
+}
+.foodArea{
+    border-radius:5px; padding:23px; height:200px; box-sizing:border-box; font-size:15px; background-color:#F7F7F7;
+}

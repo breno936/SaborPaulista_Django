@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'othersCSS/contact1.css'%}"/>
+<link rel="stylesheet" href="{% static 'othersCSS/contact2.css'%}"/>
+<link rel="stylesheet" href="{% static 'contato/style.css'%}"/>
+<link rel="stylesheet" href="{% static 'products/util.css'%}"/>
+
+{% endblock head %}
+
+
+
+
+
+
+{% block content %}
+
+
+<!--<header class="page-header ltx-bg-parallax-enabled" style="background-position: 50% 11px;">
+    <div class="container">
+        <span class="ltx-before"></span>
+        <div class="ltx-header-h1-wrapper"><h1 class="header">Contato</h1></div><ul class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">-->
+<!-- Breadcrumb NavXT 6.3.0 -->
+<!--</ul>
+        <span class="ltx-after"></span>
+        <div class="ltx-header-icon"></div>
+    </div>
+</header>-->
+
+<div class=" main-wrapper" style="background-color:white;">
+    <!-- Content -->
+    
+        <section style="padding-top: 100px; padding-bottom:50px;">
+            <div class="container inner-page text-page">
+                <div class="size-a-1 flex-col-c-m p-b-20">
+                    <div class="txt-center txt-m-201 cl10 how-pos1-parent m-b-14">
+                        Sabor Paulista
+                        <div class="how-pos1" style="width:90px;">
+                            <img src="{% static 'img/symbol-02.png'%}" alt="IMG">
+                        </div>
+                    </div>
+                    <h3 class="txt-center txt-l-101 cl3 respon1" style="text-transform:none;">
+                        Contate-nos!
+                    </h3>
+                </div>
+                <div class="heading header-subheader align-center color-black subcolor-main transform-default theme-icon-second icon-type-hidden   vc_custom_1562164638403 heading-tag-h4" id="like_sc_header_1455286753"><h4 data-text="Send message" class="header ltx-sr-id-like_sc_header_1455286753216004979 ltx-sr ltx-sr-effect-fade_in ltx-sr-el-block ltx-sr-delay-0 ltx-sr-duration-1000 ltx-sr-sequences-0" data-sr-id="1" style="visibility: visible;  -webkit-transform: scale(1); opacity: 0;transform: scale(1); opacity: 0;">Send message</h4></div><div class="ltx-contact-form-7 transform-default form-center form-white form-bg-white form-style-default form-btn-default form-btn-default form-padding-none    vc_custom_1570132734939" id="like_sc_contact_form_7_1511860442">
+                    <div role="form" class="wpcf7" id="wpcf7-f10794-p25-o2" lang="en-US" dir="ltr" style="background-color:white;">
+                        <div class="screen-reader-response"></div>
+                        <div class="d-flex" style="align-items:center;">
+                            <div class="d-none d-md-block col-6" style="border-radius:30px; height:fit-content!important; box-sizing:border-box!important;">
+                                <img style="width: 100%; border-radius: 30px; height: 70%;" src="{% static 'img/contatonew.jpg'%}" />
+
+                            </div>
+                            {% comment %} @using (Html.BeginForm("SendEmail", "Contato", FormMethod.Post, new { @class = "", @style = "", role = "form", onsubmit = "Validate()" }))
+                            {
+                                @Html.AntiForgeryToken() {% endcomment %}
+                                <form class="col-md-6 col-12 ml-auto wpcf7-form" style="background-color:white; height:fit-content" onsubmit = "Validate()">
+                                <div style="display: none;">
+                                    <input type="hidden" name="_wpcf7" value="10794" />
+                                    <input type="hidden" name="_wpcf7_version" value="5.1.6" />
+                                    <input type="hidden" name="_wpcf7_locale" value="en_US" />
+                                    <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f10794-p25-o2" />
+                                    <input type="hidden" name="_wpcf7_container_post" value="25" />
+                                </div>
+
+                                {% comment %} @Html.ValidationSummary("", new { @class = "text-danger" }) {% endcomment %}
+
+                                <!-- Floating Labels Form -->
+                                {% comment %} @*<form class="row g-3">*@ {% endcomment %}
+                                <div class="col-md-12 mb-4 " style="padding:0;">
+                                    <div class="form-floating col-12" style="padding:0;">
+                                        <input type="text" class="form-control" style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px; background-color:white;"></input>
+                                        {% comment %} @Html.TextBoxFor(m => m.Nome, new { @class = "form-control", @id = "nomeCurriculo", @placeholder = "Nome", style = "" }) {% endcomment %}
+                                        {% comment %} @Html.ValidationMessageFor(m => m.Nome)
+                                        @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+                                    </div>
+                                </div>
+                                <div class="col-12 p-0" style="display:flex;">
+                                    <div class="col-6 mb-4 " style="padding:0; padding-right:10px;">
+                                        <div class="form-floating col-12" style="padding:0;">
+                                            <input type="text" class="form-control" style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px; background-color:white;"></input>
+{% comment %} 
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @id = "emailCurriculo", @placeholder = "Email", style = "border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px; background-color:white;" })
+                                            @Html.ValidationMessageFor(m => m.Email)
+
+                                            @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-4 " style="padding:0;">
+                                        <div class="form-floating col-12" style="padding:0;">
+                                            <input type="text" class="form-control" style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px; background-color:white;"></input>
+
+                                            {% comment %} @Html.TextBoxFor(m => m.Telefone, new { @class = "form-control", @id = "telefoneCurriculo", @placeholder = "Telefone", style = "border-radius:5px; padding:23px; box-sizing:border-box; font-size:15px; background-color:white;" })
+                                            @Html.ValidationMessageFor(m => m.Telefone)
+
+                                            @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4 " style="padding:0;">
+                                    <div class="form-floating col-12" style="padding:0;">
+                                        <textarea class="form-control" style="border-radius:5px; padding:23px; height:200px; box-sizing:border-box; font-size:15px; background-color:white;"></textarea>
+                                        {% comment %} @Html.TextAreaFor(m => m.Mensagem, new { @class = "form-control", @id = "mensagemCurriculo", @placeholder = "Mensagem", style = "" })
+
+                                        @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 clientesRadios" style="margin-bottom:20px; display:flex; padding:0; justify-content:flex-start;">
+                                    <label style="display:flex; align-items:center; padding:0;">
+                                        <input type="radio" class="m-0 mr-2 square-radio" name="radioSquare"/>
+                                        <span class="square-radio-label mr-2"></span>
+                                        Consumidor
+                                    </label>
+                                    <label class="" style="display: flex; align-items: center; padding: 0;margin-left:30px;">
+                                        <input type="radio" class="m-0 mr-2 square-radio" name="radioSquare"/>
+
+                                        {% comment %} @Html.RadioButtonFor(m => m.Tipo, "Empresa", new { @class = "m-0 mx-2 square-radio", @placeholder = "Email" }) {% endcomment %}
+                                        <span class="square-radio-label mx-2"></span>
+                                        Empresa
+                                    </label>
+                                    <label class="" style="display: flex; align-items: center; padding: 0; margin-left: 30px;">
+                                        <input type="radio" class="m-0 mr-2 square-radio" name="radioSquare"/>
+
+                                        {% comment %} @Html.RadioButtonFor(m => m.Tipo, "Fornecedor", new { @class = "m-0 mx-2 square-radio", @placeholder = "Email" }) {% endcomment %}
+                                        <span class="square-radio-label mx-2"></span>
+                                        Fornecedor
+                                    </label>
+
+                                </div>
+                                <!-- CAPTCHA do reCAPTCHA -->
+                                <div class="col-12 flex-lg-row flex-md-column flex-row" style="display:flex; align-items:center; margin:0; justify-content:space-between; padding:0;">
+                                    <div class="g-recaptcha" style="width:fit-content; margin-top:10px;" data-sitekey="6Lcj44knAAAAAJaoFWd0_CzY5wnuHsnKNE5XYCWt"></div>
+
+                                    <div class="pt-sm-0 pt-5">
+                                        <span class="ltx-btn-wrap">
+                                            <span class="ltx-btn-wrap">
+                                                <button style="background-color: transparent; letter-spacing: 3px; transition: all 0.1s linear !important; padding: 10px 0px; border: 1px solid #ced4da; border-radius: 50px; height: 50px; font-size: 14px; color: black; font-weight: 400;" type="submit" value="Enviar" class="wpcf7-form-control wpcf7-submit btn botaoEnviar">Enviar</button>
+                                            </span>
+                                        </span><span class="ajax-loader"></span>
+                                    </div>
+                                </div>
+
+                                <!--</form>--><!-- End floating Labels Form -->
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section style="background-color: #F7F7F7; padding:100px 0;">
+        <div class="row centered container mx-auto" style="margin-top:0px;">
+            <div class="col-xl-12 col-xs-12 text-page">
+                <article id="post-25" class="post-25 page type-page status-publish hentry">
+                    <div class="entry-content clearfix" id="entry-div">
+                        <section data-vc-full-width="true" data-vc-full-width-init="true" class="vc_section" style="position: relative; box-sizing: border-box; padding-left: 32px; padding-right: 32px;">
+                            <div class="vc_row wpb_row vc_row-fluid">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <ul class="ltx-block-icon  has-descr  icons-count-4 align-center ltx-icon-color-main ltx-icon-size-default ltx-header-color-default ltx-icon-type-transparent ltx-bg-color-transparent layout-cols4 ltx-icon-top  row centered" id="like_sc_block_icon_559545471">
+                                                <li class="col-lg-3 col-md-6 col-sm-6 col-ms-6 col-12 local">
+                                                    <a href="https://goo.gl/maps/kyYgjZ43RVjNU81t6" target="_blank">
+                                                        <span class="ltx-icon" style="padding-top:0;">
+                                                            <img src="{% static 'img/icon-address.png'%}" />
+                                                        </span> <h6 class="header" style="color:black;"> Localização </h6><p class="mapClick" style="font-size: 12px; color: #efa907; text-decoration: underline; letter-spacing:2px;">CLIQUE PARA MAPA</p> <div class="descr">
+                                                        Rua Rosa Pinelli Gomes, 225<br />
+                                                        Vila Real Continuação • 13183-091<br />
+                                                        13183-091 • Hortolândia / SP
+                                                    </div>
+                                                    </a>
+                                                </li>
+                                                <li class=" col-lg-3 col-md-6 col-sm-6 col-ms-6 col-12">
+                                                    <a style="color:black; text-decoration:none;" href="https://wa.me/+5519974099730">
+                                                        <img src="{% static 'img/icon-phone-03.png'%}" />
+                                                        <h6 class="header" style="color: rgb(47 52 69);"> Telefones </h6> <div class="descr">
+                                                            (19) 39009-1511<br />
+                                                            (19) 97409-9730 (whatsapp)
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class=" col-lg-3 col-md-6 col-sm-6 col-ms-6 col-12">
+                                                    <a style="color:black; text-decoration:none;" href="mailto:contato@saborpaulista.com">
+                                                        <img src="{% static 'img/icon-mail-03.png'%}" />
+                                                        <h6 class="header" style="color: rgb(47 52 69);"> Email </h6> <div class="descr">
+                                                            contato@saborpaulista.com<br />
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class=" col-lg-3 col-md-6 col-sm-6 col-ms-6 col-12">
+                                                        <svg style="width:36px; height:36px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" /></svg>                                                  
+                                                   <h6 class="header" style="color: rgb(47 52 69);"> Horário de Funcionamento </h6> <div class="descr">
+                                                        Segunda a Sexta<br>
+                                                        8:00h - 18:00
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </article>
+            </div>
+        </div>
+            </section>
+    </div>
+
+
+<a href="#topo" class="scroll-top" data-target="html" style="position: fixed !important; background-color: #ffb60dbf !important; position: fixed; right: 50px; bottom: 70px; z-index: 90 !important; opacity: 1 !important;">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="white" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" /></svg>
+</a>
+
+
+{% endblock content %}
+
+
+{% block scripts %}
+
+<script src="{% static 'contato/style.js'%}"></script>
+
+
+{% endblock scripts %}
+
+
+

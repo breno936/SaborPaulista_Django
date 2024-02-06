@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'documentos/style.css' %}"/>
+<link rel="stylesheet" href="{% static 'products/util.css' %}"/>
+
+{% endblock head %}
+
+
+
+
+
+{% block content %}
+
+    <section class="" style="background-color:#F7F7F7; padding-bottom:80px; padding-top:100px;">
+        <div class="container px-8 md:px-24 mx-auto">
+            <div class="size-a-1 flex-col-c-m p-b-20">
+                <div class="txt-center txt-m-201 cl10 how-pos1-parent m-b-14">
+                    Sabor Paulista
+                    <div class="how-pos1" style="width:90px;">
+                        <img src="{% static 'img/symbol-02.png'%}" alt="IMG">
+                    </div>
+                </div>
+                <h3 class="txt-center txt-l-101 cl3 respon1" style="text-transform:none;">
+                    Confira nosso acervo!
+                </h3>
+            </div>
+    
+            <div style="display:flex; flex-direction:column; align-items:center; flex-wrap:wrap; text-align:left; width:100%; margin-bottom:12px;">
+                <div class="search col-8 col-md-4" style=" display:flex;">
+                    <input style="border: 1px solid rgba(255, 182, 13, 0.75); border-right:none; border-radius: 5px; padding: 8px; background-color: #F7F7F7 !important;" type="text" class="searchTerm col-12" placeholder="Buscar..." id="myInput" onkeyup="filtro(this.value)">
+                    <button style="background-color: rgba(255, 182, 13, 0.75); z-index: 90; position: relative; padding: 9px; margin-left: -8px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; " type="submit" class="searchButton">
+                        <i class="fa fa-search" style="color:white;" aria-hidden="true"></i>
+                    </button>
+                </div>
+    
+            </div>
+            <div class="breadcrumb__area pt-40 pb-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+    
+                            <div style="margin: 0 auto; padding: 20px 0 40px;">
+                                <div class="d-flex" id="isotope_filters" style="justify-content:center; flex-wrap:wrap;">
+    
+                                    <a data-filter="*" class="button active filtros">Todos</a>
+                                    {% for c in categorias %}
+                                        <a data-filter=".categoria_{{c.id}}" class="button filtros" id="categoria_{{c.id}}">{{c.nome}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="documentosContainer">
+                <div class="d-flex flex-wrap -mx-4" id="isotope_container">
+                    {% for d in documentos %} 
+    
+                        <div class="isotope_selector categoria_{{d.categoriaid.id}}" style="">
+                            <div class="" style="height:fit-content">
+                                <div class="inline-flex h-16 mb-6 items-center justify-center text-white bg-vermelho rounded-lg imgMiniatura" style="background-color: white !important; height:200px; display:flex; justify-content:center; align-items:center; margin:auto auto; box-sizing:border-box; width:150px;">
+                                    @if (documento.Miniatura != null)
+                                    {
+                                        <img data-name="@documento.Miniatura" data-number="1" class="lightbox-trigger" src="~/Content/UploadImages/@documento.Miniatura" style="width:95%; height:95%;" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM184 296c0 13.3 10.7 24 24 24s24-10.7 24-24V232h64c13.3 0 24-10.7 24-24s-10.7-24-24-24H232V120c0-13.3-10.7-24-24-24s-24 10.7-24 24v64H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h64v64z" /></svg>
+                                    }
+                                    else
+                                    {
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="white" d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z" /></svg>
+    
+                                    }
+                                </div>
+                            </div>
+                            <div class="" style="width:100%;">
+    
+                                <a href="../{{d.arquivo}}" class="linkArquivo" target="_blank">
+                                    <div class="manu" style="padding-top:0;" data-eva="{{d.titulo}}">
+                                        <div id="documentoContainer" class="h-full px-4 pt-0 text-left rounded-md hover:shadow-xl transition duration-200">
+    
+    
+                                            <h3 class="mb-4 mt-4" style="font-weight:bold; font-size:22px; color:black;">{{d.titulo}}</h3><p style="font-size:14px;">{{d.subtitulo}}</p>
+                                        </div>
+    
+                                    </div>
+                                </a>
+                                <div style="display:flex; align-items:center; margin-top:20px;" class="px-4 download-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" /></svg>
+                                    <a style="width:fit-content; margin-left:5px; height:fit-content; display:block; font-size:13px; " href="../{{d.arquivo}}" download class="">FAZER DOWNLOAD</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="hidden w-full h-80" id="semResult"><h1>Não foram encontrados resultados para: </h1></div>
+        </div>
+    </section>
+    <div class="lightbox-overlay">
+        <div class="lightbox" style="z-index:9999!important;">
+            <img src="" id="divFilha" alt="Imagem Ampliada" class="lightbox-image">
+            <div class="expandContract" id="expandContract">
+                <svg class="iconMaximize" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M200 32H56C42.7 32 32 42.7 32 56V200c0 9.7 5.8 18.5 14.8 22.2s19.3 1.7 26.2-5.2l40-40 79 79-79 79L73 295c-6.9-6.9-17.2-8.9-26.2-5.2S32 302.3 32 312V456c0 13.3 10.7 24 24 24H200c9.7 0 18.5-5.8 22.2-14.8s1.7-19.3-5.2-26.2l-40-40 79-79 79 79-40 40c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H456c13.3 0 24-10.7 24-24V312c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2l-40 40-79-79 79-79 40 40c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V56c0-13.3-10.7-24-24-24H312c-9.7 0-18.5 5.8-22.2 14.8s-1.7 19.3 5.2 26.2l40 40-79 79-79-79 40-40c6.9-6.9 8.9-17.2 5.2-26.2S209.7 32 200 32z" /></svg>
+                <svg class="iconMinimize" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M456 224H312c-13.3 0-24-10.7-24-24V56c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l40 40L442.3 5.7C446 2 450.9 0 456 0s10 2 13.7 5.7l36.7 36.7C510 46 512 50.9 512 56s-2 10-5.7 13.7L433 143l40 40c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8zm0 64c9.7 0 18.5 5.8 22.2 14.8s1.7 19.3-5.2 26.2l-40 40 73.4 73.4c3.6 3.6 5.7 8.5 5.7 13.7s-2 10-5.7 13.7l-36.7 36.7C466 510 461.1 512 456 512s-10-2-13.7-5.7L369 433l-40 40c-6.9 6.9-17.2 8.9-26.2 5.2s-14.8-12.5-14.8-22.2V312c0-13.3 10.7-24 24-24H456zm-256 0c13.3 0 24 10.7 24 24V456c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-40-40L69.7 506.3C66 510 61.1 512 56 512s-10-2-13.7-5.7L5.7 469.7C2 466 0 461.1 0 456s2-10 5.7-13.7L79 369 39 329c-6.9-6.9-8.9-17.2-5.2-26.2s12.5-14.8 22.2-14.8H200zM56 224c-9.7 0-18.5-5.8-22.2-14.8s-1.7-19.3 5.2-26.2l40-40L5.7 69.7C2 66 0 61.1 0 56s2-10 5.7-13.7L42.3 5.7C46 2 50.9 0 56 0s10 2 13.7 5.7L143 79l40-40c6.9-6.9 17.2-8.9 26.2-5.2s14.8 12.5 14.8 22.2V200c0 13.3-10.7 24-24 24H56z" /></svg>
+            </div>
+    
+            <div class="bottomDescGallery">
+                <div style="display:flex;">
+                    <span class="number-image" id="number-filha" style="color: black; font-weight: 300; display:none;"></span>
+                    <span class="name-image" id="name-image-filha" style="font-weight: 300;"></span>
+    
+                </div>
+                <span class="close-button" style="">FECHAR</span>
+            </div>
+        </div>
+    </div>
+    
+    <a href="#topo" class="scroll-top" data-target="html" style="position: fixed !important; background-color: #ffb60dbf !important; position: fixed; right: 50px; bottom: 70px; z-index: 90 !important; opacity: 1 !important;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="white" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" /></svg>
+    </a>
+    
+    <div class="backBlack"></div>
+
+    
+    
+    
+
+{% endblock content %}
+
+
+{% block scripts %}
+
+<script src="{% static 'documentos/style.js' %}"></script>
+
+{% endblock scripts %}
+

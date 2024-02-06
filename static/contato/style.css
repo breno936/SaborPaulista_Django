@@ -1,0 +1,39 @@
+.botaoEnviar:hover {
+    background-color: #FFB60D !important;
+    border-color: transparent !important;
+    color: white !important;
+}
+
+.square-radio {
+    display: none; /* Esconder o radio button original */
+}
+.descr {
+    margin-top: 10px;
+    color: rgb(47 52 69);
+}
+.square-radio-label {
+    display: inline-block;
+    width: 20px; /* Largura e altura iguais para criar um quadrado */
+    height: 20px;
+    background-color: white; /* Cor de fundo do quadrado */
+    border: 1px solid #ccc; /* Borda do quadrado */
+    border-radius: 4px; /* Borda arredondada para parecer um botão */
+    cursor: pointer;
+}
+
+    .square-radio-label:hover {
+        box-shadow: 0px 0px 5px #00000066;
+    }
+/* Estilo para quando o radio button estiver selecionado */
+.square-radio:checked + .square-radio-label {
+    background-color: #FFB60D; /* Cor de fundo quando selecionado */
+    border-color: black; /* Borda quando selecionado */
+}
+
+textarea::placeholder {
+    font-size: 13px; /* Defina o tamanho desejado */
+}
+
+.local:hover .mapClick {
+    color: rgb(255, 182, 13) !important;
+}

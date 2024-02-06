@@ -1,0 +1,158 @@
+        .whats-social-icon-topo p {
+            color: white;
+        }
+
+        .whats-social-icon-topo:hover p {
+            color: black;
+        }
+
+        .whats-social-icon-topo:hover span {
+            color: black !important;
+        }
+
+
+        #iconInsta:hover {
+            color: black !important;
+        }
+
+            #iconInsta:hover .instaIcon2 {
+                opacity: 1 !important;
+            }
+
+        #iconFace:hover {
+            color: black !important;
+        }
+
+        .slider_botao:hover {
+            background-color: #FFB60D;
+            border-color: transparent;
+        }
+
+        .slider_botao {
+            border: 1px solid white;
+            padding: 15px 30px;
+            color: black;
+            background-color: white;
+            text-transform: capitalize;
+        }
+
+        .saibaMaisBtn:hover {
+            border-color: transparent !important;
+        }
+
+        .saibaMaisBtn {
+            border-radius: 50px !important;
+            letter-spacing: 3px;
+            background-color: transparent;
+            border-color: white !important;
+            margin-top: 70px;
+        }
+
+        .verMaisVideos {
+            border-radius: 50px !important;
+            letter-spacing: 3px;
+            background-color: transparent;
+            border-color: black !important;
+            color: black;
+            margin-right: auto !important;
+            margin-left: auto;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .side-video:hover {
+            background-color: #80808014;
+        }
+
+        .plyr--video {
+            height: 100%;
+            width: 100%;
+        }
+
+        .plyr__video-embed {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        .verMaisVideos:hover {
+            border-color: transparent !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #FFB60D;
+        }
+
+        .swiper-pagination-bullet {
+            width: 18px;
+            height: 18px;
+            margin-left: 10px !important;
+        }
+
+        /*videos*/
+        .video-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .main-video {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .side-videos {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            height: 100%;
+        }
+
+
+        .side-video {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-top: 0;
+            padding: 0 10px;
+        }
+
+            .side-video img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                margin-bottom: 0;
+            }
+
+            .side-video h4 {
+                margin-top: 5px;
+                font-size: 16px;
+            }
+
+        .imgExportacao {
+            cursor: pointer;
+        }
+
+            .imgExportacao:hover {
+                opacity: 0.6;
+            }
+
+    @media(max-width:830px){
+        .carousel-caption {
+            margin-bottom: 30px;
+        }
+
+        .slider_botao {
+            top: -20px !important;
+        }
+    }
+    
+    @media(max-width:445px){
+        .bloco_quality {
+            margin-top: -75px;
+        }
+    }

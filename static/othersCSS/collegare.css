@@ -1,0 +1,29 @@
+﻿@font-face {
+  font-family: 'collegare';
+  src:  url('../fonts/ collegare.eot?6gcn04');
+  src:  url('../fonts/collegare.eot?6gcn04#iefix') format('embedded-opentype'),
+    url('../fonts/collegare.ttf?6gcn04') format('truetype'),
+    url('../fonts/collegare.woff?6gcn04') format('woff'),
+    url('../fonts/collegare.svg?6gcn04#collegare') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="collegare-"], [class*=" collegare-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'collegare' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.collegare-logotipo:before {
+  content: "\e900";
+}

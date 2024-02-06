@@ -1,0 +1,473 @@
+@media(max-width:768px){
+    #cookie-notification {
+        width: 350px;
+    }
+    .cookie-tab{
+        width:max-content;
+    }
+}
+@media(max-width:1100px){
+    #containerNavMobile {
+        display: block !important;
+    }
+    #containerNavRelative {
+        display: block !important;
+    }
+
+    .navbartopo {
+        display: none;
+    }
+    .navbar-toggle {
+        display: block !important;
+    }
+
+
+    #whatsNumber {
+        display: none;
+    }
+
+    #redesBlack {
+        display: none !important;
+    }
+
+    .bloco-branco-topo {
+        height: 0 !important;
+    }
+
+    .select2-hidden-accessible {
+        display: none !important;
+    }
+}
+
+.carrinhoMenu {
+    background-color: transparent !important;
+    border: 1px solid black;
+}
+
+    .carrinhoMenu:hover {
+        background-color: #ffe500 !important;
+        border: 1px solid transparent !important;
+    }
+
+        .carrinhoMenu:hover #boxMsg {
+            opacity: 1 !important;
+        }
+
+.carrinhoMenuHoverInternal:hover svg path {
+    fill: #FBBE00 !important;
+    background-color: transparent !important;
+}
+
+.carrinhoMenuHoverInternal:hover #boxMsg {
+    opacity: 1 !important;
+}
+
+.carrinhoMenuHoverInternal {
+    background-color: transparent !important;
+}
+
+.subMenu {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.2s linear;
+    list-style: none;
+    position: absolute !important;
+    width: 200px;
+    background-color: white;
+    z-index: 999;
+    display: block !important;
+    top: 70px;
+}
+
+#sobreNosLi:hover div {
+    height: 200% !important;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nav-link:hover {
+    background-color: #FFE500 !important;
+}
+
+.nav-link-sub:hover {
+    background-color: #fff7b3 !important;
+}
+
+/* Estilos para a notificação de cookie */
+#cookie-notification {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0px;
+    border-radius: 10px;
+    z-index: 9999;
+    width: 650px;
+    margin-right: auto;
+    transition: all 0.6s ease-in-out;
+}
+
+.cookie-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .cookie-content p {
+        margin: 10px 0;
+        color: #fff;
+        text-align: center;
+        width: 90%;
+    }
+
+.cookie-buttons {
+    display: block;
+    gap: 10px;
+    justify-content: center;
+    width:fit-content;
+    padding:0px 20px;
+    text-align:center;
+}
+
+    .cookie-buttons button {
+        background-color: transparent;
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 30px;
+        padding: 8px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+        letter-spacing: 3px;
+        margin-right:5px;
+    }
+
+        .cookie-buttons button:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+#boxMsg {
+    pointer-events: none;
+}
+/* Estilos para a aba dos cookies */
+.cookie-tab {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 30%);
+    height: 50px;
+    width: fit-content;
+    background-color: #f39c12;
+    color: #fff;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 9998;
+}
+
+    .cookie-tab:hover {
+        transform: translate(-50%, 10%);
+    }
+
+    .cookie-tab span {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+#fundo-preto-cookie {
+    top: 0;
+    left: 0;
+    position: fixed;
+    opacity: 0.5;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9998;
+    background-color: black;
+    display: none;
+}
+
+#linksFooter a:hover {
+    color: #FFB60D;
+}
+
+.plyr {
+    box-shadow: none;
+    margin: 0;
+}
+
+.plyr__video-embed::before {
+    content: none; /* Ocultar bordas predefinidas do player do YouTube */
+}
+
+.plyr {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+/* Estilo para ajustar o tamanho do player Plyr */
+.plyr__video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção de aspecto 16:9 (para vídeo em widescreen) */
+}
+
+.plyr__video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.plyr__video-embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.collegare-logotipo:hover {
+    color: #000000a8 !important;
+}
+
+.link-privacidade {
+    color: #FFB60D;
+}
+
+    .link-privacidade:hover {
+        color: white;
+    }
+
+        .link-privacidade:hover::after {
+            width: 100% !important;
+            background-color: white;
+        }
+
+    .link-privacidade::after {
+        content: '';
+        width: 0;
+        height: 2px;
+        background-color: #FFB60D;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.logoAnimacao1 {
+    animation: logoAnimation;
+    animation-name: logoAnimation;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+
+.logobolado:hover {
+    animation: logoAnimation2;
+    animation-fill-mode: forwards;
+    animation-duration: 0.7s;
+}
+
+@keyframes logoAnimation {
+    from {
+        top: 10px;
+    }
+
+    to {
+        top: -20px;
+    }
+}
+
+@keyframes logoAnimation2 {
+    0% {
+        top: -20px;
+    }
+
+    50% {
+        top: -10px;
+    }
+
+    100% {
+        top: -20px;
+    }
+}
+
+.wp_input {
+    margin: 0 5px 16px;
+    padding: 12px 10px;
+    display: block;
+    width: -webkit-fill-available;
+    min-width: 95%;
+    border: 1px solid #fff;
+    border-radius: 6px
+}
+
+    .wp_input:focus {
+        outline: none
+    }
+
+.wp_iniciar {
+    display: block;
+    text-align: center;
+    margin: 20px 5px 5px;
+    padding: 15px;
+    color: #fff;
+    border-radius: 9px;
+    background-color: #53a451;
+    font-size: 16px;
+    font-weight: 500
+}
+
+    .wp_iniciar:hover {
+        color: #fff;
+        background-color: #53a451;
+        opacity: .8;
+        text-decoration: none
+    }
+
+    .wp_iniciar:focus {
+        color: #fff;
+        text-decoration: none
+    }
+
+.wp_cabecalho {
+    background-color: #265c54;
+    padding: 20px 76px 20px 15px;
+    color: #fff;
+    font-size: 17px
+}
+
+.form_whatsapp {
+    max-width: 550px;
+    right: 12px;
+    position: absolute;
+    padding: 20px;
+    bottom: 0
+}
+
+.box_whatsapp {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgb(0 0 0 / 85%);
+    height: 100%;
+    width: 100%;
+    z-index: 999
+}
+
+.wp_form {
+    background-color: #ebe5de;
+    padding: 20px;
+    text-align: center
+}
+
+.wp_close {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    top: 0;
+    margin-top: 25px
+}
+
+    .wp_close svg {
+        width: 12px;
+        height: 12px;
+        fill: #fff
+    }
+
+.wp_cta {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 45px;
+    right: 0;
+    margin-right: 40px;
+    z-index: 9998
+}
+
+    .wp_cta img {
+        animation: wptransform 1.5s alternate infinite 3s;
+        width: 80px
+    }
+
+    .wp_cta:hover {
+        opacity: .9
+    }
+
+.whats {
+    position: fixed;
+    height: 5.5rem;
+    width: 5.5rem;
+    cursor: pointer;
+    animation-name: whatsapp;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    right: 130px;
+    bottom: 70px;
+    z-index: 999;
+    animation-delay: 1.5s;
+    animation-direction: alternate;
+}
+
+    .whats img {
+        width: 100%;
+        height: 100%;
+    }
+
+@keyframes whatsapp {
+    0% {
+        right: 130px;
+    }
+
+    70% {
+        right: 130px;
+    }
+
+    100% {
+        right: 200px;
+    }
+}
+
+@keyframes wptransform {
+    0% {
+        transform: scale(1)
+    }
+
+    to {
+        transform: scale(.9)
+    }
+}
+
+.tpcheck-btn:hover {
+    border-color: transparent !important;
+    background-color: rgb(255, 182, 13) !important;
+    color: white !important;
+}
+
+#wp_br, #wp_en {
+    display: none
+}
+
+.wp_visible {
+    display: block !important
+}
+
+.svgSocialIconFooter {
+    fill: #7a5941;
+}
+
+    .svgSocialIconFooter:hover {
+        fill: #FFB60D !important;
+        cursor: pointer;
+    }

@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'icon_suporte';
+  src:  url('../fonts/icon_suporte.eot?rnvwl0');
+  src:  url('../fonts/icon_suporte.eot?rnvwl0#iefix') format('embedded-opentype'),
+    url('../fonts/icon_suporte.ttf?rnvwl0') format('truetype'),
+    url('../fonts/icon_suporte.woff?rnvwl0') format('woff'),
+    url('../fonts/icon_suporte.svg?rnvwl0#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon_suporte-"], [class*=" icon_suporte-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icon_suporte' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_suporte-:before {
+  content: "\e902";
+}
