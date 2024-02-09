@@ -81,7 +81,8 @@ class Products(models.Model):
     descricao = models.TextField(db_column='Descricao', blank=True, null=True)  # Field name made lowercase.
     modopreparo = models.TextField(db_column='ModoPreparo', blank=True, null=True)  # Field name made lowercase.
     conservacao = models.TextField(db_column='Conservacao', blank=True, null=True)  # Field name made lowercase.
-    codigobarras = models.TextField(db_column='CodigoBarras', blank=True, null=True)  # Field name made lowercase.
+    # codigobarras = models.TextField(db_column='CodigoBarras', blank=True, null=True)  # Field name made lowercase.
+    codigobarras = models.ImageField(upload_to='images/', blank=True)
     ingredientes = models.TextField(db_column='Ingredientes', blank=True, null=True)  # Field name made lowercase.
     idnutricional = models.ForeignKey('Tabelanutricionals', models.DO_NOTHING, db_column='IdNutricional', blank=True, null=True)  # Field name made lowercase.
     home_page = models.BooleanField(default=False)
@@ -145,20 +146,29 @@ class Sliderhomes(models.Model):
 
 class Tabelanutricionals(models.Model):
     # id = models.AutoField(db_column='Id', primary_key=True, blank=True, null=True)  # Field name made lowercase.
-    valorenergetico = models.TextField(db_column='ValorEnergetico', blank=True, null=True)  # Field name made lowercase.
-    carboidratostotais = models.TextField(db_column='CarboidratosTotais', blank=True, null=True)  # Field name made lowercase.
-    acucarestotais = models.TextField(db_column='AcucaresTotais', blank=True, null=True)  # Field name made lowercase.
-    proteinas = models.TextField(db_column='Proteinas', blank=True, null=True)  # Field name made lowercase.
-    gordurastotais = models.TextField(db_column='GordurasTotais', blank=True, null=True)  # Field name made lowercase.
-    gordurassaturadas = models.TextField(db_column='GordurasSaturadas', blank=True, null=True)  # Field name made lowercase.
-    gordurastrans = models.TextField(db_column='GordurasTrans', blank=True, null=True)  # Field name made lowercase.
-    fibraalimentar = models.TextField(db_column='FibraAlimentar', blank=True, null=True)  # Field name made lowercase.
-    sodio = models.TextField(db_column='Sodio', blank=True, null=True)  # Field name made lowercase.
-    infos = models.TextField(db_column='Infos', blank=True, null=True)  # Field name made lowercase.
+    valorenergetico = models.FloatField(db_column='ValorEnergetico', blank=True, null=True)  # Field name made lowercase.
+    carboidratostotais = models.FloatField(db_column='CarboidratosTotais', blank=True, null=True)  # Field name made lowercase.
+    acucarestotais = models.FloatField(db_column='AcucaresTotais', blank=True, null=True)  # Field name made lowercase.
+    proteinas = models.FloatField(db_column='Proteinas', blank=True, null=True)  # Field name made lowercase.
+    gordurastotais = models.FloatField(db_column='GordurasTotais', blank=True, null=True)  # Field name made lowercase.
+    gordurassaturadas = models.FloatField(db_column='GordurasSaturadas', blank=True, null=True)  # Field name made lowercase.
+    gordurastrans = models.FloatField(db_column='GordurasTrans', blank=True, null=True)  # Field name made lowercase.
+    fibraalimentar = models.FloatField(db_column='FibraAlimentar', blank=True, null=True)  # Field name made lowercase.
+    sodio = models.FloatField(db_column='Sodio', blank=True, null=True)  # Field name made lowercase.
+    infos = models.CharField(db_column='Infos', blank=True, null=True, max_length=255)  # Field name made lowercase.
 
     class Meta:
         db_table = 'TabelaNutricionals'
+    
+    def __str__(self) -> str:
+        return str(self.id) + " - " + self.infos
 
+class ProdutoFotos(models.Model):
+    produtoid = models.ForeignKey(Products, on_delete=models.CASCADE)
+    foto = models.ImageField(upload_to='images/')
+
+    def __str__(self) -> str:
+        return str(self.id)
 
 class Videos(models.Model):
     # id = models.AutoField(db_column='Id', primary_key=True, blank=True, null=True)  # Field name made lowercase.

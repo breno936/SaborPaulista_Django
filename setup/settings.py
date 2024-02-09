@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'foodService.apps.FoodserviceConfig',
     'documentos.apps.DocumentosConfig',
     'bootstrap5',
+    'django_recaptcha',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +82,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'setup.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
+
+RECAPTCHA_PUBLIC_KEY = '6Ldo4WkpAAAAAGEaiHJDGnkmrFAD3-ym7dErmzec'
+RECAPTCHA_PRIVATE_KEY = '6Ldo4WkpAAAAACNmkp2IyWyQyRPEOVna1680Cr32'
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # new
+DEFAULT_FROM_EMAIL = "naoresponda@collegare.com.br"
+EMAIL_HOST = "smtp.collegare.com.br"
+EMAIL_HOST_USER = "naoresponda@collegare.com.br"  # new
+EMAIL_HOST_PASSWORD = "password"
+EMAIL_USE_TLS = True  # new
+
+EMAIL_USE_TLS = False
+EMAIL_PORT = 587  # new
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases

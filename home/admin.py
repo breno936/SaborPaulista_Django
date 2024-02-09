@@ -23,6 +23,12 @@ class DocumentsAdmin(admin.ModelAdmin):
 class SliderAdmin(admin.ModelAdmin):
     pass
 
+class TabelaNutricionalAdmin(admin.ModelAdmin):
+    pass
+
+class ProdutoFotosAdmin(admin.ModelAdmin):
+    pass
+
 admin.site.register(Products, ItemAdmin)
 admin.site.register(Categorias, CategoriaAdmin)
 admin.site.register(ProductsAttributes, ProductAttributesAdmin)
@@ -30,3 +36,5 @@ admin.site.register(Representantes, RepresentantesAdmin)
 admin.site.register(Documents, DocumentsAdmin)
 admin.site.register(Categoriasdocumentos, CatDocAdmin)
 admin.site.register(Sliderhomes, SliderAdmin)
+admin.site.register(Tabelanutricionals, TabelaNutricionalAdmin)
+admin.site.register(ProdutoFotos, ProdutoFotosAdmin)

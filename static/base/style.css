@@ -471,3 +471,30 @@ body {
         fill: #FFB60D !important;
         cursor: pointer;
     }
+
+.my-10{
+    margin: 20px 0;
+}
+
+.custom-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+}
+
+.fs {
+      grid-column: col-start / span 12;
+}
+.fs2 {
+    grid-row: 5;
+    grid-column: col-start / span 10;
+}
+.ms {
+    grid-column: col-start / span 6;
+  grid-row: 2;
+}
+.ms2 {
+  grid-column: col-start 7 / span 6;
+  grid-row: 2;
+
+}

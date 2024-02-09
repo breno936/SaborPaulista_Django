@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View
-from home.models import Products, Categorias
+from home.models import Products, Categorias, Tabelanutricionals, ProdutoFotos
 
 # Create your views here.
 
@@ -14,4 +14,6 @@ class ProductsView(View):
 class ProductsDetailView(View):
     def get(self, request, pk):
         produto_info = get_object_or_404(Products, pk=pk)
-        return render(request, "products/product-detail.html", {"produto" : produto_info})
+        tabela_info = get_object_or_404(Tabelanutricionals, pk= produto_info.idnutricional.id)
+        fotos = ProdutoFotos.objects.filter(produtoid=produto_info.id)
+        return render(request, "products/product-detail.html", {"produto" : produto_info, "tabela" : tabela_info, "fotos" : fotos})
