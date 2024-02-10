@@ -93,9 +93,7 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # new
 DEFAULT_FROM_EMAIL = "naoresponda@collegare.com.br"
 EMAIL_HOST = "smtp.collegare.com.br"
 EMAIL_HOST_USER = "naoresponda@collegare.com.br"  # new
-EMAIL_HOST_PASSWORD = "password"
-EMAIL_USE_TLS = True  # new
-
+EMAIL_HOST_PASSWORD = "password"  # new
 EMAIL_USE_TLS = False
 EMAIL_PORT = 587  # new
 

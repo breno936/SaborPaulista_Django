@@ -50,7 +50,7 @@
                    preencha o formulário que entraremos em contato</p>
                 </div>
                 <div class="" style="">
-                    <form method="post" class="rounded p-2 ml-lg-4 p-md-4" style="">
+                    <form method="POST" action="" class="rounded p-2 ml-lg-4 p-md-4" style="" >
                           {% csrf_token %}
                         {{form.as_p}}
                           <div class="col-12" style="display:flex; align-items:center; margin:10px 0; justify-content:space-between; padding:0;">
@@ -62,6 +62,12 @@
                                 </span><span class="ajax-loader"></span>
                             </div>
                         </div>
+                        {% if enviado %}
+                        <div  class="fs alert alert-success" role="alert">
+                            Sua mensagem foi enviada com sucesso!
+                        </div>
+                        {% endif %}
+
                     </form>
                 </div>
             </div>

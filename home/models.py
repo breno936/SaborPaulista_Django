@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.html import mark_safe
 
 # Create your models here.
 class Categorias(models.Model):
@@ -7,6 +8,7 @@ class Categorias(models.Model):
 
     class Meta:
         db_table = 'Categorias'
+        verbose_name_plural = "Produtos Categoria"
         
     def __str__(self) -> str:
         return self.nome
@@ -18,6 +20,7 @@ class Categoriasdocumentos(models.Model):
 
     class Meta:
         db_table = 'CategoriasDocumentos'
+        verbose_name_plural = "Documentos Categoria"
     
     def __str__(self) -> str:
         return self.nome
@@ -33,6 +36,7 @@ class Configuracoes(models.Model):
 
     class Meta:
         db_table = 'Configuracoes'
+        verbose_name_plural = "Configurações"
 
 
 class Curriculoes(models.Model):
@@ -44,6 +48,7 @@ class Curriculoes(models.Model):
 
     class Meta:
         db_table = 'Curriculoes'
+        verbose_name_plural = "Currículos"
 
 
 class Documents(models.Model):
@@ -57,6 +62,7 @@ class Documents(models.Model):
 
     class Meta:
         db_table = 'Documents'
+        verbose_name_plural = "Documentos"
 
     def __str__(self) -> str:
         return self.titulo
@@ -64,6 +70,9 @@ class Documents(models.Model):
 
 class ProductsAttributes(models.Model):
     atributo = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name_plural = "Produtos - Atributos"
 
     def __str__(self) -> str:
         return self.atributo
@@ -90,21 +99,11 @@ class Products(models.Model):
 
     class Meta:
         db_table = 'Products'
+        verbose_name_plural = "Produtos"
+
     
     def __str__(self) -> str:
         return self.nome
-
-
-class Productshomes(models.Model):
-    # id = models.AutoField(db_column='Id', primary_key=True, blank=True, null=True)  # Field name made lowercase.
-    nome = models.TextField(db_column='Nome', blank=True, null=True)  # Field name made lowercase.
-    categoriaid = models.ForeignKey(Categorias, models.DO_NOTHING, db_column='CategoriaId', blank=True, null=True)  # Field name made lowercase.
-    img = models.TextField(db_column='Img', blank=True, null=True)  # Field name made lowercase.
-    link = models.TextField(db_column='Link', blank=True, null=True)  # Field name made lowercase.
-
-    class Meta:
-        db_table = 'ProductsHomes'
-
 
 class Representantes(models.Model):
     # id = models.AutoField(db_column='Id', primary_key=True)  # Field name made lowercase.
@@ -120,6 +119,7 @@ class Representantes(models.Model):
 
     class Meta:
         db_table = 'Representantes'
+        verbose_name_plural = "Representantes"
 
     def __str__(self) -> str:
         return self.nome
@@ -139,6 +139,8 @@ class Sliderhomes(models.Model):
 
     class Meta:
         db_table = 'SliderHomes'
+        verbose_name_plural = "Slides"
+
     
     def __str__(self) -> str:
         return self.titulo
@@ -159,9 +161,10 @@ class Tabelanutricionals(models.Model):
 
     class Meta:
         db_table = 'TabelaNutricionals'
+        verbose_name_plural = "Tabela Nutricional"
     
     def __str__(self) -> str:
-        return str(self.id) + " - " + self.infos
+        return str(self.id)
 
 class ProdutoFotos(models.Model):
     produtoid = models.ForeignKey(Products, on_delete=models.CASCADE)
@@ -170,6 +173,9 @@ class ProdutoFotos(models.Model):
     def __str__(self) -> str:
         return str(self.id)
 
+    class Meta:
+        verbose_name_plural = "Produtos - Fotos"
+
 class Videos(models.Model):
     # id = models.AutoField(db_column='Id', primary_key=True, blank=True, null=True)  # Field name made lowercase.
     nome = models.CharField(db_column='Nome', blank=True, null=True, max_length=100)  # Field name made lowercase.
@@ -177,3 +183,38 @@ class Videos(models.Model):
 
     class Meta:
         db_table = 'Videos'
+        verbose_name_plural = "Vídeos"
+
+    def __str__(self) -> str:
+        return self.nome
+
+
+class Parceiros(models.Model):
+    logotipo = models.ImageField(upload_to='images/', null=True)
+    visivel = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name_plural = "Parceiros"
+
+    def __str__(self) -> str:
+        return str(self.id)
+
+    def image_tag(self):
+        return mark_safe('<img src="/%s" width="200" height="80" />' % (self.logotipo))
+
+    image_tag.short_description = 'Image'
+
+class Galeria(models.Model):
+    imagem = models.ImageField(upload_to='images/', null=True)
+    visivel = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name_plural = "Galeria"
+
+    def __str__(self) -> str:
+        return str(self.id)
+
+    def image_tag(self):
+        return mark_safe('<img src="/%s" width="200" height="150" />' % (self.imagem))
+
+    image_tag.short_description = 'Image'

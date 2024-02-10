@@ -473,13 +473,23 @@ body {
     }
 
 .my-10{
-    margin: 20px 0;
+    margin: 5px 0;
 }
 
 .custom-grid {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(12, [col-start] 1fr);
+}
+
+.fs1 {
+      /* grid-column: col-start / span 12; */
+      grid-column: col-start 6 / span 7;
+}
+
+
+#trabalhe > label {
+    grid-column: col-start / span 4;
 }
 
 .fs {
@@ -496,5 +506,27 @@ body {
 .ms2 {
   grid-column: col-start 7 / span 6;
   grid-row: 2;
+}
 
+.tr {
+    grid-column: col-start / span 6;
+  grid-row: 3;
+
+}
+
+.tr2 {
+  grid-column: col-start 7 / span 6;
+  grid-row: 3;
+
+}
+
+#id_curriculo {
+    height: 40px;
+}
+
+.errorlist {
+    grid-column: col-start / span 12;
+    grid-row: 6;
+    color: #f00;
+    font-weight: 500;
 }

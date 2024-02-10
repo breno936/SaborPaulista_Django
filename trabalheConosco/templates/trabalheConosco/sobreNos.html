@@ -212,11 +212,13 @@
             </p>
             <div class="swiper mySwiper" style="margin-top:40px;">
                 <div class="swiper-wrapper">
+                    {% for p in parceiros %}
                     <div class="swiper-slide">
-
-                        <img class="img1 zoom-image" src="{% static 'img/p1.jpg'%}"style="width:fit-content;" />
+                        <img class="img1 zoom-image" src="../../{{p.logotipo}}"style="width:fit-content;" />
                     </div>
-                    <div class="swiper-slide">
+                    {% endfor %}
+
+                    <!-- <div class="swiper-slide">
 
                         <img class="img1 zoom-image" src="{% static 'img/p2.jpg'%}" style="width:fit-content;"/>
                     </div>
@@ -235,13 +237,13 @@
                     <div class="swiper-slide">
 
                         <img class="img1 zoom-image" src="{% static 'img/p6.jpg'%}" style="width:fit-content;"/>
-                    </div>
+                    </div> -->
                
                 </div>
 
             </div>
-            {% comment %} @*<div class="swiper-button-next" style="color: #ccb700 !important; margin-right: -60px; margin-top:20px;"></div>
-                <div class="swiper-button-prev" style="color: #ccb700 !important; margin-left: -60px; margin-top: 20px;"></div>*@ {% endcomment %}
+            <div class="swiper-button-next" style="color: #ccb700 !important; margin-right: -60px; margin-top:20px;"></div>
+                <div class="swiper-button-prev" style="color: #ccb700 !important; margin-left: -60px; margin-top: 20px;"></div>
         </div>
 
     </section>
@@ -250,13 +252,12 @@
 <section class="galeriaSection" style="padding-top:0px;">
     <div class="" style="display:flex;">
         <!-- Swiper -->
-
-        <div style="width:25%; height:auto;"><img src="{%static 'img/temp1.jpg'%}" data-name="temp1" data-number="1" class="lightbox-trigger" style="width:100%; height:100%; cursor:pointer;" /></div>
-        <div style="width: 25%; height: auto;"><img src="{% static 'img/temp2.jpg'%}" data-name="temp2" data-number="2" class="lightbox-trigger" style="width: 100%; height: 100%; cursor: pointer;" /></div>
+        {% for g in galeria %}
+        <div style="width:25%; height:auto;"><img src="../../{{g.imagem}}" data-name="temp1" data-number="1" class="lightbox-trigger" style="width:100%; height:100%; cursor:pointer;" /></div>
+        {% endfor %}
+        <!-- <div style="width: 25%; height: auto;"><img src="{% static 'img/temp2.jpg'%}" data-name="temp2" data-number="2" class="lightbox-trigger" style="width: 100%; height: 100%; cursor: pointer;" /></div>
         <div style="width: 25%; height: auto;"><img src="{% static 'img/temp3.jpg'%}" data-name="temp3" data-number="3" class="lightbox-trigger" style="width: 100%; height: 100%; cursor: pointer;" /></div>
-        <div style="width: 25%; height: auto;"><img src="{% static 'img/temp4.jpg'%}" data-name="temp4" data-number="4" class="lightbox-trigger" style="width: 100%; height: 100%; cursor: pointer;" /></div>
-
-
+        <div style="width: 25%; height: auto;"><img src="{% static 'img/temp4.jpg'%}" data-name="temp4" data-number="4" class="lightbox-trigger" style="width: 100%; height: 100%; cursor: pointer;" /></div> -->
     </div>
 
 </section>

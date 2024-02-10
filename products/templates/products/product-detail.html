@@ -94,7 +94,9 @@ Sem conservantes.<br> -->
                     <div class="txt-s-107 p-b-6" style="height: 150px;">
 
                         <div style="width:70%; height:70%;">
-                            <img src="../{{produto.codigobarras}}" style="width:100%; height:100%;">
+                            {% if produto.codigobarras %}
+                            <img src="../{{produto.codigobarras}}" style="width:100%; height:100%;" />
+                            {% endif %}
                         </div>
                     </div>
                     <div class="txt-s-107 p-b-6">

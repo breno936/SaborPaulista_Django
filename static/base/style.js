@@ -1209,6 +1209,41 @@
 
         $(document).ready(function () {
             $(".js-example-basic-single").select2();
+
+            $("#id_telefone").on( "keydown", function() {
+                formataTelefone(this)
+            });
+
+        $("form").submit(function() {
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                var file = $('#id_curriculo')[0].files[0];
+
+                if (file && file.size > 2 * 1024 * 1024) {
+                    // alert("File " + file.name + " of type " + file.type + " is too big");
+                    Swal.fire(
+                    'Aviso',
+                    'O tamanho do arquivo é superior ao máximo permitido que é de 2Mb',
+                    'error',
+                  )
+                return false;
+                }
+            }
+
+            var extension = $('#id_curriculo').val().split('.').pop().toLowerCase();
+            var validExtensions = ["pdf","doc","docx"]
+            if (validExtensions.includes(extension)){
+
+            }
+            else{
+                  Swal.fire(
+                    'Aviso',
+                    'Apenas arquivos PDF ou Word são permitidos',
+                    'error',
+                  )
+                return false;
+            }
+
+            });
         });
      
 

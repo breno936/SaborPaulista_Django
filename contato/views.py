@@ -11,10 +11,10 @@ class ContatoView(View):
 
         return render(request, "contato/contato.html", {"form": form})
     def post(self, request):
-        print('caiu no post ')
-        print('%' * 100)
+        validado = False
         form = ContatoForm(request.POST)
         if form.is_valid():
+            validado = True
 
             TIPO_CONTATO = (('', 'Tipo de Contato'), ('Consumidor', 'Consumidor'),('Empresa', 'Empresa'),('Fornecedor', 'Fornecedor'),)
 
@@ -39,9 +39,10 @@ class ContatoView(View):
 
             try:
                 send_mail(subject, message, from_email='naoresponda@collegare.com.br', recipient_list=['angeloni.dev@gmail.com'])
+                form = ContatoForm()
 
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             
-        return render(request, "contato/contato.html", {"form": form})
+        return render(request, "contato/contato.html", {"form": form, "enviado" : validado})
 

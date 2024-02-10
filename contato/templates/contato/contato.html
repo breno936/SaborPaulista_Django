@@ -66,7 +66,13 @@
                                         </span><span class="ajax-loader"></span>
                                     </div>
                                 </div>
-                                </form>
+                            {% if enviado %}
+                            <div  class="fs alert alert-success" role="alert">
+                                Sua mensagem foi enviada com sucesso!
+                            </div>
+                            {% endif %}
+
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -142,7 +148,8 @@
 
 {% block scripts %}
 
-<script src="{% static 'contato/style.js'%}"/>
+<script src="{% static 'contato/mascara.js'%}"></script>
+<script src="{% static 'contato/style.js'%}"></script>
 
 
 {% endblock scripts %}

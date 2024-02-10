@@ -18,7 +18,9 @@ class RepresentantesView(View):
         print('caiu no post ')
         print('%' * 100)
         form = RepresentantesForm(request.POST)
+        validado = False
         if form.is_valid():
+            validado = True
             subject = "Contato Representante" 
             full_message = f"""
             Nome: {form.cleaned_data['nome']} \n
@@ -38,6 +40,7 @@ class RepresentantesView(View):
 
             try:
                 send_mail(subject, message, from_email='naoresponda@collegare.com.br', recipient_list=['angeloni.dev@gmail.com'])
+                form = RepresentantesForm()
 
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
@@ -46,5 +49,5 @@ class RepresentantesView(View):
 
         representantes = Representantes.objects.all()
         produtos = Products.objects.all()
-        return render(request, "representantes/representantes.html", {"representantes" : representantes, "produtos": produtos, "form" : form})
+        return render(request, "representantes/representantes.html", {"representantes" : representantes, "produtos": produtos, "form" : form, "enviado" : validado})
 
