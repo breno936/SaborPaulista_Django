@@ -95,111 +95,32 @@
         <div>
 
         </div>
-        <div>
-            <div role="form" class="wpcf7 container" id="wpcf7-f10794-p25-o2" lang="en-US" dir="ltr">
-                <div class="screen-reader-response"></div>
-                <div class="col-12 mx-auto">
+           <div class="col-6 mx-auto">
                     <h1 style="color: rgb(77, 85, 116); font-size:40px; margin-bottom:10px; font-weight:300;">Quero vender produtos Sabor Paulista!</h1>
-                    {% comment %} @using (Html.BeginForm("SendEmail", "Contato", FormMethod.Post, new { @class = "wpcf7-form p-0", role = "form", onsubmit = "Validate()" }))
-                    { {% endcomment %}
-                        {% comment %} @Html.AntiForgeryToken() {% endcomment %}
-                        <div style="display: none;">
-                            <input type="hidden" name="_wpcf7" value="10794" />
-                            <input type="hidden" name="_wpcf7_version" value="5.1.6" />
-                            <input type="hidden" name="_wpcf7_locale" value="en_US" />
-                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f10794-p25-o2" />
-                            <input type="hidden" name="_wpcf7_container_post" value="25" />
-                        </div>
 
-                        {% comment %} @Html.ValidationSummary("", new { @class = "text-danger" }) {% endcomment %}
 
-                        <!-- Floating Labels Form -->
-                        {% comment %} @*<form class="row g-3">*@ {% endcomment %}
-                        <div class="col-md-12 mb-4 " style="padding:0;">
-                            <div class="form-floating col-12" style="padding:0;">
-                                <input type="text" class="fieldsFood form-control"></input>
-                                {% comment %} @Html.TextBoxFor(m => m.Nome, new { @class = "form-control", @id = "nomeCurriculo", @placeholder = "Nome", style = "" }) {% endcomment %}
-                                {% comment %} @Html.ValidationMessageFor(m => m.Nome) {% endcomment %}
-                                {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
-                            </div>
-                        </div>
-                        <div class="col-12 p-0" style="display:flex;">
+                       <form method="post" class="mb-4 ml-auto custom-grid"  style="height:fit-content"  onsubmit = "Validate()">
+                                    {% csrf_token %}
+                                    {{form}}
 
-                            <div class="col-6 mb-4 " style="padding:0; padding-right:10px;">
-                                <div class="form-floating col-12" style="padding:0;">
-                                    <input type="text" class="fieldsFood form-control"></input>
-
-                                    {% comment %} @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @id = "emailCurriculo", @placeholder = "Email", style = "border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px; background-color:#F7F7F7;" })
-                                    @Html.ValidationMessageFor(m => m.Email) {% endcomment %}
-
-                                    {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
-
-                                </div>
-                            </div>
-                            <div class="col-6 mb-4 " style="padding:0;">
-                                <div class="form-floating col-12" style="padding:0;">
-                                    <input type="text" class="fieldsFood form-control"></input>
-
-                                    {% comment %} @Html.TextBoxFor(m => m.Telefone, new { @class = "form-control", @id = "telefoneCurriculo", @placeholder = "Telefone", style = "border-radius:5px; padding:23px; box-sizing:border-box; font-size:15px; background-color:#F7F7F7;" })
-                                    @Html.ValidationMessageFor(m => m.Telefone) {% endcomment %}
-
-                                    {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
-
-                                </div>
-                            </div>
-                            </div>
-                            <div class="col-md-12 mb-4 " style="padding:0;">
-                                <div class="form-floating col-12" style="padding:0;">
-                                    <textarea class="form-control foodArea"></textarea>
-                                    {% comment %} @Html.TextAreaFor(m => m.Mensagem, new { @class = "form-control", @id = "mensagemCurriculo", @placeholder = "Mensagem", style = "" }) {% endcomment %}
-
-                                    {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
-
-                                </div>
-                            </div>
-
-                            <div class="col-12 clientesRadios" style="margin-bottom:20px; display:flex; padding:0; justify-content:flex-start;">
-                                <label style="display:flex; align-items:center; padding:0;">
-                                    <input type="radio" class="m-0 mr-2 square-radio" name="radioSquare"/>
-                                    {% comment %} @Html.RadioButtonFor(m => m.Tipo, "Consumidor", new { @class = "m-0 mr-2 square-radio", @placeholder = "Email" }) {% endcomment %}
-                                    <span class="square-radio-label mr-2"></span>
-                                    Consumidor
-                                </label>
-                                <label class="" style="display: flex; align-items: center; padding: 0;margin-left:30px;">
-                                    <input type="radio" class="m-0 mr-2 square-radio" name="radioSquare"/>
-
-                                    {% comment %} @Html.RadioButtonFor(m => m.Tipo, "Empresa", new { @class = "m-0 mx-2 square-radio", @placeholder = "Email" }) {% endcomment %}
-                                    <span class="square-radio-label mx-2"></span>
-                                    Empresa
-                                </label>
-                                <label class="" style="display: flex; align-items: center; padding: 0; margin-left: 30px;">
-                                    <input type="radio" class="m-0 mr-2 square-radio" name="radioSquare"/>
-
-                                    {% comment %} @Html.RadioButtonFor(m => m.Tipo, "Fornecedor", new { @class = "m-0 mx-2 square-radio", @placeholder = "Email" }) {% endcomment %}
-                                    <span class="square-radio-label mx-2"></span>
-                                    Fornecedor
-                                </label>
-                            </div>
-                            <!-- CAPTCHA do reCAPTCHA -->
-                            <div class="col-12  flex-sm-row flex-column" style="display:flex; align-items:center; margin:0; justify-content:space-between; padding:0;">
-                                <div class="g-recaptcha" style="width:fit-content; margin-top:10px;" data-sitekey="6Lcj44knAAAAAJaoFWd0_CzY5wnuHsnKNE5XYCWt"></div>
-
-                                <div>
-                                    <span class="ltx-btn-wrap">
+                                <div class="col-12 flex-lg-row flex-md-column flex-row" style="display:flex; align-items:center; margin:0; justify-content:space-between; padding:0;">
+                                    <div class="pt-sm-0 pt-5">
                                         <span class="ltx-btn-wrap">
-                                            <button style="background-color: transparent; letter-spacing: 3px; transition: all 0.1s linear !important; padding: 10px 0px; border: 1px solid #ced4da; border-radius: 50px; height: 50px; font-size: 14px; color: black; font-weight: 400;" type="submit" value="Enviar" class="wpcf7-form-control wpcf7-submit btn botaoEnviar">Enviar</button>
-                                        </span>
-                                    </span><span class="ajax-loader"></span>
+                                            <span class="ltx-btn-wrap">
+                                                <button style="background-color: transparent; letter-spacing: 3px; transition: all 0.1s linear !important; padding: 10px 0px; border: 1px solid #ced4da; border-radius: 50px; height: 50px; font-size: 14px; color: black; font-weight: 400;width:130px" type="submit" value="Enviar" class="wpcf7-form-control wpcf7-submit btn botaoEnviar">Enviar</button>
+                                            </span>
+                                        </span><span class="ajax-loader"></span>
+                                    </div>
                                 </div>
+                            {% if enviado %}
+                            <div  class="fs alert alert-success" role="alert">
+                                Sua mensagem foi enviada com sucesso!
                             </div>
+                            {% endif %}
 
-                            <!--</form>--><!-- End floating Labels Form -->
-                            {% comment %} } {% endcomment %}
-
+                                </form>
                         </div>
-                    </div>
-        </div>
-    </div>
+            </div>
 </section>
 
 <section>
@@ -211,4 +132,8 @@
 
 {% endblock content %}
 
+{% block scripts %}
 
+<script src="{% static 'contato/style.js'%}"></script>
+
+{% endblock scripts %}

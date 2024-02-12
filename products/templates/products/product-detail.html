@@ -26,7 +26,7 @@
 
 
         <div style="margin-bottom:20px; margin-left:40px; width:fit-content; cursor:pointer;" class="arrow-back">
-            <a href="/testprop/Produtos/Produtos" style="display: flex; align-items: center; ">
+            <a href="../produtos/" style="display: flex; align-items: center; ">
 
                 <span class="seta-" style="font-weight: 500; color: black; font-size: 20px; margin-right:15px;"></span>
                 <h4 style="font-weight:400; color:black; font-size:12px; letter-spacing:3px;">VOLTAR PRODUTOS</h4>
@@ -42,10 +42,17 @@
                                 <img src="../{{produto.foto_principal}}" class="imgCar" alt="Produto" style="width:100%; height:100%;">
                             </div>
                             <div class="thumbnails">
-                                <img src="/testprop/Content/UploadImages/ok_multigraos235504302.jpg" alt="Thumbnail 1" class="thumbnail active">
-                                <img src="/testprop/Content/UploadImages/ok_empanado_parmesao235544529.jpg" alt="Thumbnail 2" class="thumbnail">
-                                <img src="/testprop/Content/UploadImages/ok_empanado_parmesao235544529.jpg" alt="Thumbnail 3" class="thumbnail">
+                                {% for f in fotos%}
+                                    {% if forloop.first %}
+                                        <img src="../{{f.foto}}" alt="Thumbnail 1" class="thumbnail active">
+                                    
+                                    {% else %}
+                                        <img src="../{{f.foto}}" alt="Thumbnail 1" class="thumbnail">
+                                    {% endif %}
+                                <!-- <img src="/testprop/Content/UploadImages/ok_empanado_parmesao235544529.jpg" alt="Thumbnail 2" class="thumbnail"> -->
+                                <!-- <img src="/testprop/Content/UploadImages/ok_empanado_parmesao235544529.jpg" alt="Thumbnail 3" class="thumbnail"> -->
 
+                                {% endfor %}
                                 <!-- Adicione mais thumbnails aqui -->
                             </div>
                         </div>
@@ -87,7 +94,9 @@ Sem conservantes.<br> -->
                     <div class="txt-s-107 p-b-6" style="height: 150px;">
 
                         <div style="width:70%; height:70%;">
-                            <img src="{% static 'img/ok_dadinho.jpg' %}" style="width:100%; height:100%;">
+                            {% if produto.codigobarras %}
+                            <img src="../{{produto.codigobarras}}" style="width:100%; height:100%;" />
+                            {% endif %}
                         </div>
                     </div>
                     <div class="txt-s-107 p-b-6">
@@ -130,13 +139,78 @@ Sem conservantes.<br> -->
                                     Valor Energético
                                 </span>
                                 <span class="cl9 size-w-55">
-                                    150 kcal
+                                    {{tabela.valorenergetico}}
                                 </span>
                             </li>
-                                                                                                                                                                                                                                                    <li class="txt-s-101 flex-w how-bor2 p-tb-14">
+                            <li class="txt-s-101 flex-w how-bor2 p-tb-14">
+                                <span class="cl6 size-w-54">
+                                    Carboidratos
+                                </span>
+                                <span class="cl9 size-w-55">
+                                    {{tabela.carboidratostotais}}
+                                </span>
+                            </li>
+                            <li class="txt-s-101 flex-w how-bor2 p-tb-14">
+                                <span class="cl6 size-w-54">
+                                    Açucares Totais
+                                </span>
+                                <span class="cl9 size-w-55">
+                                    {{tabela.acucarestotais}}
+                                </span>
+                            </li>
+                             <li class="txt-s-101 flex-w how-bor2 p-tb-14">
+                                <span class="cl6 size-w-54">
+                                    Proteínas
+                                </span>
+                                <span class="cl9 size-w-55">
+                                    {{tabela.proteinas}}
+                                </span>
+                            </li>                                                                                                                                                                                                                                                   <li class="txt-s-101 flex-w how-bor2 p-tb-14">
+                            <li class="txt-s-101 flex-w how-bor2 p-tb-14">
+                                <span class="cl6 size-w-54">
+                                    Gorduras Totais
+                                </span>
+                                <span class="cl9 size-w-55">
+                                    {{tabela.gordurastotais}}
+                                </span>
+                            </li>
+                            <li class="txt-s-101 flex-w how-bor2 p-tb-14">
+                                <span class="cl6 size-w-54">
+                                    Gorduras Saturadas
+                                </span>
+                                <span class="cl9 size-w-55">
+                                    {{tabela.gordurassaturadas}}
+                                </span>
+                            </li>
+                            <li class="txt-s-101 flex-w how-bor2 p-tb-14">
+                                <span class="cl6 size-w-54">
+                                    Gorduras Trans
+                                </span>
+                                <span class="cl9 size-w-55">
+                                    {{tabela.gordurastrans}}
+                                </span>
+                            </li>
+                            <li class="txt-s-101 flex-w how-bor2 p-tb-14">
+                                <span class="cl6 size-w-54">
+                                    Fibra Alimentar
+                                </span>
+                                <span class="cl9 size-w-55">
+                                    {{tabela.fibraalimentar}}
+                                </span>
+                            </li>
+                            <li class="txt-s-101 flex-w how-bor2 p-tb-14">
+                                <span class="cl6 size-w-54">
+                                    Sódio
+                                </span>
+                                <span class="cl9 size-w-55">
+                                    {{tabela.sodio}}
+                                </span>
+                            </li>
+                            <li>
+                                <br>
+
                                 <span class="cl6">
-                                    Média de 150 kcal por porção de 50g, 300 kcal por 100g de produto.
-Ausência de alegações de alto teor de gorduras saturadas, sódio ou açúcares (conforme legislação atual).
+                                    {{tabela.infos}}
                                 </span>
 
                             </li>

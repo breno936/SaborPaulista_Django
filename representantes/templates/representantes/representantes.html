@@ -50,53 +50,10 @@
                    preencha o formulário que entraremos em contato</p>
                 </div>
                 <div class="" style="">
-                    <form onsubmit="EnviarForm()" class="rounded p-2 ml-lg-4 p-md-4" style="">
-                        <div class="col-md-12 mb-4 " style="padding:0;">
-                            <div class="form-floating col-12" style="padding:0;">
-
-                                <input type="text" style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px;" class="form-control col-12" id="nomeInput" placeholder="Nome" />
-
-                                {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
-                            </div>
-                        </div>
-                        <div class="col-md-12 mb-4 " style="padding:0;">
-                            <div class="form-floating col-12" style="padding:0;">
-                                <input type="email" style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px;" class="form-control col-12" id="emailInput" placeholder="Email" />
-
-
-                                {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
-                            </div>
-                        </div>
-                        <div class="col-md-12 mb-4 " style="padding:0;">
-                            <div class="form-floating col-12" style="padding:0;">
-
-                                <input type="telefone" style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px;" class="form-control col-12" id="telefoneInput" placeholder="Telefone" />
-
-                                {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
-                            </div>
-                        </div>
-                        <div class="col-md-12 mb-4 " style="padding:0;">
-                            <div class="form-floating col-12" style="padding:0;">
-
-                                <input type="cidade" style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px;" class="form-control col-12" id="cidadeInput" placeholder="Cidade que deseja atuar" />
-
-                                {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
-                            </div>
-                        </div>
-                        <div class="col-md-12 " style="padding:0; margin-bottom:30px;">
-                            <div class="form-floating col-12" style="padding:0;">
-
-
-                                <textarea class="form-control col-12 " style="border-radius:5px; padding:23px; box-sizing:border-box;font-size:15px;" id="mensagemInput" placeholder="Mensagem" rows="3"></textarea>
-
-                                {% comment %} @*@Html.LabelFor(m => m.Nome)*@ {% endcomment %}
-                            </div>
-                        </div>
-
-
-                        <div class="col-12" style="display:flex; align-items:center; margin:0; justify-content:space-between; padding:0;">
-                            <div class="g-recaptcha" style="width:fit-content; margin-top:10px;" data-sitekey="6Lcj44knAAAAAJaoFWd0_CzY5wnuHsnKNE5XYCWt"></div>
-
+                    <form method="POST" action="" class="rounded p-2 ml-lg-4 p-md-4" style="" >
+                          {% csrf_token %}
+                        {{form.as_p}}
+                          <div class="col-12" style="display:flex; align-items:center; margin:10px 0; justify-content:space-between; padding:0;">
                             <div>
                                 <span class="ltx-btn-wrap">
                                     <span class="ltx-btn-wrap">
@@ -105,6 +62,12 @@
                                 </span><span class="ajax-loader"></span>
                             </div>
                         </div>
+                        {% if enviado %}
+                        <div  class="fs alert alert-success" role="alert">
+                            Sua mensagem foi enviada com sucesso!
+                        </div>
+                        {% endif %}
+
                     </form>
                 </div>
             </div>
@@ -255,16 +218,16 @@
                 <h4 style="padding-top: 10px; color: rgb(47 52 69); font-size: 18px;">Nossa Linha de Produtos</h4>
             </div>
             <div class="tab-pane @*fade*@ show active whight-product" id="nav-popular" role="tabpanel" aria-labelledby="nav-popular-tab" style="padding-top:50px; padding-bottom:50px;">
-                <div class="tpproduct__shop-item" id="isotope_container" style="display:flex;">
-                    @foreach (var produto in Model.ProductHomes)
-                    {
+                   <div class="tpproduct__shop-item" id="isotope_container" style="display:flex;">
+                   
+                    {% for p in produtos %}
 
                         <div class="isotope_selector categoria_@produto.CategoriaId" style="width:15%;">
-                            <a href='@Url.Action("SingleProduct", "Produtos", new {id = produto.Id})'>
+                            <a href='../produtos/{{p.id}}'>
                                 <div class="tpproduct p-relative mb-20 boxShadowHover">
                                     <div class="mx-auto tpproduct__thumb p-relative text-center" style="height:50%;">
-                                        <img id="imgProduto{@produto.Id}" class="tpproduct__thumb-img1" src="~/Content/UploadImages/@produto.Imagem1" alt="">
-                                        <img class="tpproduct__thumb-img2" src="~/Content/UploadImages/@produto.Imagem2" alt="">
+                                        <img id="imgProduto{{p.id}}" class="tpproduct__thumb-img1" src="../{{p.foto_principal}}" alt="">
+                                        <img class="tpproduct__thumb-img2" src="../{{p.foto_secundaria}}" alt="">
                                         <div class="tpproduct__info bage">
 
                                         </div>
@@ -272,22 +235,16 @@
                                     </div>
                                     <div class="tpproduct__content">
                                         <span class="tpproduct__content-weight">
-                                            <span class="produto-categoria" id="nomeCategoriaProduto{@produto.Id}">@produto.NomeCategoria</span>
+                                            <span class="produto-categoria" id="nomeCategoriaProduto{{p.id}}">{{p.categoriaid}}</span>
                                         </span>
                                         <h4 class="tpproduct__title">
-                                            <span class="produto-nome" id="nomeProduto{@produto.Id}">@produto.Nome</span>
+                                            <span class="produto-nome" id="nomeProduto{{p.id}}">{{p.nome}}</span>
                                         </h4>
-                                        {% comment %} @{ int id = produto.Id;
-                                            decimal preco = produto.Preco;
-                                            string img = produto.Imagem1;
-                                            string nome = produto.Nome;
-                                            int quantidade = 1;
-                                        } {% endcomment %}
 
                                         <div class="tpproduct__rating mb-5">
 
                                         </div>
-                                        {% comment %} @*<div class="tpproduct__price">
+                                        {% comment %} @*<   div class="tpproduct__price">
                                 <span id="precoProduto{@produto.Id}">@produto.Preco</span>
                             </div>*@ {% endcomment %}
 
@@ -297,7 +254,7 @@
                             </a>
                         </div>
 
-                    }
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -321,13 +278,13 @@
 
                 </div>
                 <div id="documentosContainer" style="padding-top:50px;">
-                    <div class="d-flex flex-wrap -mx-4">
+                 <div class="d-flex flex-wrap -mx-4">
 
                         {% for r in representantes %}
 
                             <div class="col-12 col-md-6 col-lg-4 ">
 
-                                <a href="https://www.google.com/maps/place/@representante.EnderecoMaps" target="_blank">
+                                <a href="{{r.enderecomaps}}" target="_blank">
                                     <div class="col-12 px-4 manu" data-eva="@representante.Nome">
                                         <div id="documentoContainer" class="h-full p-4 text-center rounded-md hover:shadow-xl transition duration-200">
                                             <div class="inline-flex h-16 mb-6 items-center justify-center text-white bg-vermelho rounded-lg" style="background-color: rgba(255, 182, 13, 0.75) !important; height: 60px; margin: auto auto; box-sizing: border-box; padding: 15px; width: 60px;">
