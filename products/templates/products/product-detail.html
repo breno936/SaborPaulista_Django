@@ -42,18 +42,21 @@
                                 <img src="../{{produto.foto_principal}}" class="imgCar" alt="Produto" style="width:100%; height:100%;">
                             </div>
                             <div class="thumbnails">
-                                {% for f in fotos%}
-                                    {% if forloop.first %}
+                                {% for f in fotos%} 
+                                     {% if forloop.first %}
                                         <img src="../{{f.foto}}" alt="Thumbnail 1" class="thumbnail active">
                                     
                                     {% else %}
-                                        <img src="../{{f.foto}}" alt="Thumbnail 1" class="thumbnail">
+                                        <img src="../{{f.foto}}" alt="Thumbnail 2" class="thumbnail">
+                                        <img src="../{{f.foto}}" alt="Thumbnail 3" class="thumbnail">
                                     {% endif %}
-                                <!-- <img src="/testprop/Content/UploadImages/ok_empanado_parmesao235544529.jpg" alt="Thumbnail 2" class="thumbnail"> -->
-                                <!-- <img src="/testprop/Content/UploadImages/ok_empanado_parmesao235544529.jpg" alt="Thumbnail 3" class="thumbnail"> -->
+                                {% comment %} <img src="{% static 'img/girl.jpg'%}" alt="Thumbnail 1" class="thumbnail"> 
+
+                                 <img src="{% static 'img/beneficios.jpg'%}" alt="Thumbnail 2" class="thumbnail"> 
+                                 <img src="{% static 'img/exportacao.jpg'%}" alt="Thumbnail 3" class="thumbnail">  {% endcomment %}
 
                                 {% endfor %}
-                                <!-- Adicione mais thumbnails aqui -->
+                                                                <!-- Adicione mais thumbnails aqui -->
                             </div>
                         </div>
                     </div>
@@ -230,9 +233,10 @@ Sem conservantes.<br> -->
 </section>
 {% endblock content %}
 
-    {% block scripts %}
+{% block scripts %}
 
-<scripts src="{% static 'products/slide100.js'%}"></script>
-<scripts src="{% static 'products/slide100-custom.js'%}"></script>
+<script src="{% static 'products/slide100.js'%}"></script>
+<script src="{% static 'products/slide100-custom.js'%}"></script>
+<script src="{% static 'products/style.js'%}"></script>
 
 {% endblock scripts %}

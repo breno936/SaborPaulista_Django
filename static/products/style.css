@@ -135,3 +135,95 @@ boxShadowHover:hover .tpproduct__thumb-img1 {
   animation: slideaway 500ms;
   /*display: none;*/
 }
+.qtyminus:hover path {
+    fill: white;
+    transition: all 0.1s linear;
+}
+
+.qtyplus:hover path {
+    fill: white;
+    transition: all 0.1s linear;
+}
+
+.js-addcart1 {
+    background-color: transparent !important;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: black !important;
+    border: 1px solid black;
+}
+
+    .js-addcart1:hover {
+        background-color: #FFB60D !important;
+        color: white !important;
+        border-color: transparent !important;
+    }
+
+.product-details {
+    display: flex;
+}
+
+.product-images {
+    flex: 1;
+    text-align: center;
+}
+
+.main-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.thumbnails {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.thumbnail {
+    border: 1px solid #f1ede0;
+    width: 195px; /* Defina a largura desejada para as miniaturas */
+    height: 195px; /* Defina a altura desejada para as miniaturas */
+    margin: 0 0;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+    .thumbnail:hover {
+        opacity: 1;
+    }
+
+     .active{
+        opacity:1!important;
+    }
+.nav-topicos:hover {
+    background-color: #e6e5e5 !important;
+    color: black !important;
+}
+
+.nav-topicos:focus {
+    background-color: #FFB60D !important;
+    color: white !important;
+}
+
+.tab02 .nav-link.active {
+    background-color: #FFB60D !important;
+    color: white !important;
+}
+
+.arrow-back:hover h4 {
+    color: #FFB60D !important;
+}
+
+.arrow-back h4 {
+    transition: all 0.1s linear;
+}
+
+.arrow-back:hover span {
+    color: #FFB60D !important;
+}
+.arrow-back span {
+    transition: all 0s linear !important;
+}
