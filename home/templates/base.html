@@ -9,7 +9,6 @@
     {% bootstrap_javascript %}
 
 
-    <link rel="stylesheet" href="{% static 'base/style.css' %}">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
@@ -75,6 +74,10 @@
     <link rel="stylesheet" href="{% static 'othersCSS/icon_fabricacao-style.css' %}">
     <link rel="stylesheet" href="{% static 'othersCSS/seta.css' %}">
     <link rel="stylesheet" href="{% static 'othersCSS/text-rotator.css' %}">
+    <link rel="stylesheet" href="{% static 'othersCSS/navbar.less' %}">
+    <link rel="stylesheet" href="{% static 'base/style.css' %}">
+    <link rel="stylesheet" href="{% static 'products/util.css' %}"/>
+
     {% comment %} <link rel="stylesheet" href="{% static 'othersCSS/css' %}">
     <link rel="stylesheet" href="{% static 'othersCSS/modernizr' %}"> {% endcomment %}
     {% comment %} @if (IsSectionDefined("Contact"))
@@ -169,7 +172,7 @@
                 <div class="col-12 container mx-auto navFlex" style="display: flex; justify-content: center; align-items: center; width: 100%; max-width:1300px;">
                     {% if request.path == "/" %}
                     
-                        <a class="navbar-brand logobolado" href="@Url.Action("Index", "Home")" style="top:-20px; position:relative!important;"><img src="{% static 'img/logotipo_home_principal.png'%}" alt="logo"></a>
+                        <a class="navbar-brand logobolado" href="{% url 'home' %}" style="top:-20px; position:relative!important;"><img src="{% static 'img/logotipo_home_principal.png'%}" alt="logo"></a>
 
                     {% endif %}
                     <nav class="navbar pt-0 navbar-light row navbar-expand-md flex-column" role="navigation" style="margin-bottom:0!important; padding:0!important; width:100%;">
@@ -187,7 +190,7 @@
 
                             {% endif %}
                             <div class="navbar-brand mx-auto" id="iconLadoHome" style="padding:0; padding-right:15px; display:none; height:47px; margin-top:">
-                                <a href="@Url.Action("Index", "Home")">
+                                <a href="{% url 'home' %}">
                                     <img style=" width:100%; height:100%;" src="{% static 'img/logo_menu_interno_sem_box.png'%}" alt="logo">
                                 </a>
                             </div>
@@ -195,11 +198,11 @@
                             <ul class="site-navigation nav navbar-nav mx-auto justify-content-center menu">
 
                                 <li class="nav-item menu-item px-0">
-                                    <a class="nav-link a-btn px-4" href="{% url 'home' %}">Home</a>
+                                    <a class="nav-link a-btn px-3" href="{% url 'home' %}">Home</a>
                                     {% comment %} @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
                                 </li>
                                 <li class="nav-item menu-item px-0" id="sobreNosLi">
-                                    <a class="nav-link a-btn px-4" onclick="travaSubMenu(this)">Sobre Nós</a>
+                                    <a class="nav-link a-btn px-3" onclick="travaSubMenu(this)">Sobre Nós</a>
                                     <div class="subMenu">
                                         <ul>
                                             <li class="nav-item menu-item px-0">
@@ -217,23 +220,23 @@
                                 </li>
 
                                 <li class="nav-item menu-item px-0">
-                                    <a class="nav-link a-btn px-4" href="{% url 'products' %}">Produtos</a>
+                                    <a class="nav-link a-btn px-3" href="{% url 'products' %}">Produtos</a>
                                     {% comment %} @Html.ActionLink("Produtos", "Produtos", "Produtos", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
                                 </li>
                                 <li class="nav-item menu-item px-0">
-                                    <a class="nav-link a-btn px-4" href="{% url 'foodService' %}">FoodService</a>
+                                    <a class="nav-link a-btn px-3" href="{% url 'foodService' %}">FoodService</a>
                                     {% comment %} @Html.ActionLink("Food Service", "FoodService", "FoodService", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
                                 </li>
                                 <li class="nav-item menu-item px-0">
-                                    <a class="nav-link a-btn px-4" href="{% url 'representantes' %}">Representantes</a>
+                                    <a class="nav-link a-btn px-3" href="{% url 'representantes' %}">Representantes</a>
                                     {% comment %} @Html.ActionLink("Representantes", "Representantes", "Representante", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
                                 </li>
                                 <li class="nav-item menu-item px-0">
-                                    <a class="nav-link a-btn px-4" href="{% url 'documentos' %}">Documentos</a>
+                                    <a class="nav-link a-btn px-3" href="{% url 'documentos' %}">Documentos</a>
                                     {% comment %} @Html.ActionLink("Documentos", "Documentos", "Documentos", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
                                 </li>
                                 <li class="nav-item menu-item px-0">
-                                    <a class="nav-link a-btn px-4" href="{% url 'contato' %}">Contate-nos</a>
+                                    <a class="nav-link a-btn px-3" href="{% url 'contato' %}">Contate-nos</a>
                                     {% comment %} @Html.ActionLink("Contate-nos", "Contato", "Contato", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
                                 </li>
 
@@ -279,7 +282,7 @@
                 <ul class="nav navbar-nav">
                     <li class="nav-item menu-item">
                         <a class="nav-link a-btn px-4" href="{% url 'home' %}">Home</a>
-                        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link a-btn px-4" })
+                        {% comment %} @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link a-btn px-4" }) {% endcomment %}
                     </li>
                     <li class="nav-item menu-item" id="sobreNosLi">
                         <a class="nav-link a-btn px-4" >Sobre Nós</a>

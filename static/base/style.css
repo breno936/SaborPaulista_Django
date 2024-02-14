@@ -407,8 +407,8 @@ body {
 
 .whats {
     position: fixed;
-    height: 5.5rem;
-    width: 5.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
     cursor: pointer;
     animation-name: whatsapp;
     animation-duration: 2s;

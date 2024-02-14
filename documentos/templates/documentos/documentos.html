@@ -4,7 +4,8 @@
 {% block head %}
 
 <link rel="stylesheet" href="{% static 'documentos/style.css' %}"/>
-<link rel="stylesheet" href="{% static 'products/util.css' %}"/>
+<link rel="stylesheet" href="{% static 'products/main.css'%}">
+
 
 {% endblock head %}
 
@@ -96,7 +97,9 @@
                     {% endfor %}
                 </div>
             </div>
+            {% if documentos == null %}
             <div class="hidden w-full h-80" id="semResult"><h1>Não foram encontrados resultados para: </h1></div>
+            {% endif %}
         </div>
     </section>
     <div class="lightbox-overlay">

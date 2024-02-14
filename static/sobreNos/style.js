@@ -168,5 +168,56 @@
                             });
                         }
                     }
-                 
-            
+
+                    function resposiveSwiper() {
+                        var largura = window.innerWidth;
+                        console.log("sdsfdsfdsfdf");
+        
+                        if (largura < 768) {
+                            var swiper = new Swiper(".mySwiper", {
+                                slidesPerView: 2,
+                                spaceBetween: 200,
+                                slidesPerGroup: 1,
+                                speed: 3500,
+                                loop: true,
+                                autoplay: {
+                                    delay: 1,
+                                    disableOnInteraction: false,
+                                },
+                                loopFillGroupWithBlank: true,
+                                pagination: {
+                                    el: ".swiper-pagination",
+                                    clickable: true,
+                                },
+                                navigation: {
+                                    nextEl: ".swiper-button-next",
+                                    prevEl: ".swiper-button-prev",
+                                },
+                            });
+                        } else {
+        
+                            var swiper = new Swiper(".mySwiper", {
+                                slidesPerView: 4,
+                                spaceBetween: 200,
+                                slidesPerGroup: 1,
+                                speed: 3500,
+                                loop: true,
+                                autoplay: {
+                                    delay: 1,
+                                    disableOnInteraction: false,
+                                },
+                                loopFillGroupWithBlank: true,
+                                pagination: {
+                                    el: ".swiper-pagination",
+                                    clickable: true,
+                                },
+                                navigation: {
+                                    nextEl: ".swiper-button-next",
+                                    prevEl: ".swiper-button-prev",
+                                },
+                            });
+                        }
+                    }
+                    window.addEventListener('resize', resposiveSwiper);
+        resposiveSwiper();       
+        

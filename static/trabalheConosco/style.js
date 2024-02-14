@@ -1,4 +1,5 @@
 // alert("OI")
+
 console.log("AAAAAAAAAAAAAAAAAAAAAAAAA")
 var upload = document.getElementById("id_curriculo");
 upload.addEventListener("change", function (e) {
@@ -28,3 +29,4 @@ $(document).ready(function () {
     });
 
 })
+

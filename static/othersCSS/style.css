@@ -484,6 +484,7 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 	top:50px;
 	z-index:90;
 	margin:5px 5px 5px 5px;
+	height: 50px;
 }
 .h1-style{
 	font-family:"Open Sans", sans-serif;
